@@ -11,3 +11,6 @@ public/resources/plugins/*
 public/resources/uploads/*
 # website cache directory
 public/resources/cache/*
+
+
+# todo
