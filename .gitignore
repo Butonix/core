@@ -1,0 +1,13 @@
+# vagrant stuff
+.vagrant/*
+Vagrantfile
+
+# theme dist assets
+resources/dist/*
+public/resources/dist/*
+# plugins
+public/resources/plugins/*
+# uploads media
+public/resources/uploads/*
+# website cache directory
+public/resources/cache/*
