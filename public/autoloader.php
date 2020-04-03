@@ -54,7 +54,6 @@ if ( file_exists( CONFIG_DIR . 'configuration.php' ) ) {
 } else {
 
 	// A config file doesn't exist.
-
 	require_once ABSPATH . WPINC . '/load.php';
 
 	// Standardize $_SERVER variables across setups.

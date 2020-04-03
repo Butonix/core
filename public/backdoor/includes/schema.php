@@ -98,16 +98,6 @@ CREATE TABLE $wpdb->options (
 	UNIQUE KEY option_name (option_name),
 	KEY autoload (autoload)
 ) $charset_collate;
-CREATE TABLE $wpdb->settings (
-	option_id bigint(20) unsigned NOT NULL auto_increment,
-	option_name varchar(191) NOT NULL default '',
-	option_value longtext NOT NULL,
-	option_group varchar(191) NOT NULL default '',
-	autoload varchar(20) NOT NULL default 'yes',
-	PRIMARY KEY  (option_id),
-	UNIQUE KEY option_name (option_name),
-	KEY autoload (autoload)
-) $charset_collate;
 CREATE TABLE $wpdb->postmeta (
 	meta_id bigint(20) unsigned NOT NULL auto_increment,
 	post_id bigint(20) unsigned NOT NULL default '0',

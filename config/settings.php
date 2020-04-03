@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Used to set up and fix common variables and include
  * the WordPress procedural and class library.
@@ -17,6 +18,15 @@
   // Charti CMS is Looking to rewrite the native /wp-json path
   // This file is going to be required in settings.php bellow
 	$api_end_points_custom_file = CHARTI_CONFIGURATIONS__DIR . '/charti-rewrite-api-endpoints.php';
+
+
+	// Whoops Errors Handler. This goes on top just to be first over the apache/nginx errors
+	// require ABSPATH . ADMIN_DIR . '/mu-vendors/autoload.php';
+	// $whoops = new \Whoops\Run;
+	// $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+	// $whoops->register();
+
+
 
 /**
  * Version information for the current WordPress release.
@@ -406,7 +416,7 @@ require ABSPATH . WPINC . '/pluggable-deprecated.php';
  * 	Charti CMS 
  *	@since 0.1
 **/
-require ABSPATH . WPINC . '/rest-api/search/function-search-admin.php';
+//require ABSPATH . WPINC . '/rest-api/search/function-search-admin.php';
 require ABSPATH . WPINC . '/charti/AdminDashboard.php';
 require ABSPATH . WPINC . '/charti/FrontEndRoutes.php';
 // Adding Quick Meta Fields

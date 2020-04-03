@@ -18,3 +18,4 @@ if ( isset( $_GET['wps_disable'] ) ) {
 
 $wps = new \Rarst\wps\Plugin();
 $wps->run();
+
