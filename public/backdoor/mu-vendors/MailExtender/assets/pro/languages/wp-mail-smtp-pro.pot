@@ -1,0 +1,897 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Mail SMTP 1.9.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-mail-smtp-pro\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-03-23T16:26:08+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: wp-mail-smtp-pro\n"
+
+#. Plugin Name of the plugin
+msgid "WP Mail SMTP Pro"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://wpmailsmtp.com/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Reconfigures the <code>wp_mail()</code> function to use Gmail/Mailgun/SendGrid/SMTP instead of the default <code>mail()</code> and creates an options page to manage the settings."
+msgstr ""
+
+#. Author of the plugin
+msgid "WPForms"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://wpforms.com/"
+msgstr ""
+
+#: src/Pro/Emails/Control/Admin/SettingsTab.php:23
+msgid "Email Controls"
+msgstr ""
+
+#: src/Pro/Emails/Control/Admin/SettingsTab.php:47
+msgid "WordPress, by default, will send out emails for many events on your site. Using the toggles below, you can decide exactly which emails you'd like enabled."
+msgstr ""
+
+#: src/Pro/Emails/Control/Admin/SettingsTab.php:91
+msgid "On"
+msgstr ""
+
+#: src/Pro/Emails/Control/Admin/SettingsTab.php:92
+msgid "Off"
+msgstr ""
+
+#: src/Pro/Emails/Control/Admin/SettingsTab.php:160
+#: src/Pro/Emails/Logs/Admin/SettingsTab.php:136
+msgid "Settings were successfully saved."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:89
+msgid "Comments"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:92
+msgid "Awaiting Moderation"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:93
+msgid "Comment is awaiting moderation. Sent to the site admin and post author if they can edit comments."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:96
+msgid "Published"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:97
+msgid "Comment has been published. Sent to the post author."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:102
+msgid "Change of Admin Email"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:105
+msgid "Site Admin Email Change Attempt"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:106
+msgid "Change of site admin email address was attempted. Sent to the proposed new email address."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:109
+msgid "Site Admin Email Changed"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:110
+msgid "Site admin email address was changed. Sent to the old site admin email address."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:113
+msgid "Network Admin Email Change Attempt"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:114
+msgid "Change of network admin email address was attempted. Sent to the proposed new email address."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:117
+msgid "Network Admin Email Changed"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:118
+msgid "Network admin email address was changed. Sent to the old network admin email address."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:123
+msgid "Change of User Email or Password"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:126
+msgid "Reset Password Request"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:127
+msgid "User requested a password reset via \"Lost your password?\". Sent to the user."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:130
+msgid "Password Reset Successfully"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:131
+msgid "User reset their password from the password reset link. Sent to the site admin."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:134
+msgid "Password Changed"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:135
+msgid "User changed their password. Sent to the user."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:138
+msgid "Email Change Attempt"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:139
+msgid "User attempted to change their email address. Sent to the proposed new email address."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:142
+msgid "Email Changed"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:143
+msgid "User changed their email address. Sent to the user."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:148
+msgid "Personal Data Requests"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:151
+msgid "User Confirmed Export / Erasure Request"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:152
+msgid "User clicked a confirmation link in personal data export or erasure request email. Sent to the site or network admin."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:155
+msgid "Admin Erased Data"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:156
+msgid "Site admin clicked \"Erase Personal Data\" button next to a confirmed data erasure request. Sent to the requester email address."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:166
+msgid "Automatic Updates"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:169
+#: src/Pro/Providers/AmazonSES/Options.php:205
+msgid "Status"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:170
+msgid "Completion or failure of a background automatic core update. Sent to the site or network admin."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:173
+msgid "Full Log"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:174
+msgid "Full log of background update results. Only sent when you are using a development version of WordPress. Sent to the site or network admin."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:179
+msgid "New User"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:182
+msgid "Created (Admin)"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:183
+msgid "A new user was created. Sent to the site admin."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:186
+msgid "Created (User)"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:187
+msgid "A new user was created. Sent to the new user."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:190
+msgid "Invited To Site"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:191
+msgid "A new user was invited to a site from Users -> Add New -> Add New User. Sent to the invited user."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:194
+msgid "Created On Site"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:195
+msgid "A new user account was created. Sent to Network Admin."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:198
+msgid "Added / Activated on Site"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:199
+msgid "A user has been added, or their account activation has been successful. Sent to the user, that has been added/activated."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:204
+msgid "New Site"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:207
+msgid "Added To Network"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:208
+msgid "When WordPress was installed, and when a site was added to a Multisite network. Sent to the side admin."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:211
+msgid "User Created Site"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:212
+msgid "User registered for a new site. Sent to the site admin."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:215
+msgid "Network Admin: User Activated / Added Site"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:216
+msgid "User activated their new site, or site was added from Network Admin -> Sites -> Add New. Sent to Network Admin."
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:219
+msgid "Site Admin: Activated / Added Site"
+msgstr ""
+
+#: src/Pro/Emails/Control/Control.php:220
+msgid "User activated their new site, or site was added from Network Admin -> Sites -> Add New. Sent to Site Admin."
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/ArchivePage.php:22
+#: src/Pro/Emails/Logs/Admin/SettingsTab.php:23
+msgid "Email Log"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/ArchivePage.php:43
+msgid "Reset Search"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/ArchivePage.php:74
+msgid "Search Emails"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/PageAbstract.php:57
+msgid "Email Logging is Not Enabled"
+msgstr ""
+
+#. translators: %s - settings page URL to configure Email Log.
+#: src/Pro/Emails/Logs/Admin/PageAbstract.php:62
+msgid "Email Logging can be turned on in the WP Mail SMTP plugin settings, under the <a href=\"%s\">Email Log tab</a>. "
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/PageAbstract.php:73
+msgid "Emails sent when logging is disabled are not stored in the database and will not display when enabled."
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/PageAbstract.php:89
+msgid "Email Logging is Not Installed Correctly"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/PageAbstract.php:92
+msgid "For some reason the database table was not installed correctly. Please contact plugin support team to diagnose and fix the issue."
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/PageAbstract.php:94
+msgid "Right now all sent emails are not logged."
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SettingsTab.php:57
+msgid "Enable Log"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SettingsTab.php:64
+msgid "Keep a record of basic details for all emails sent from your site."
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SettingsTab.php:67
+msgid "This will allow you to view both general information (date sent, subject, email status) and technical information (all the headers, including TO, CC, BCC) for all sent emails."
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SettingsTab.php:76
+msgid "Log Email Content"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SettingsTab.php:83
+msgid "Keep a record of all content for all emails sent from your site."
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SettingsTab.php:86
+msgid "Email content may contain personal information, such as plain text passwords. Please carefully consider before enabling this option, as it will store all sent email content to your site’s database."
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:31
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:312
+msgid "View Email"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:48
+msgid "Back to Email Log"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:93
+msgid "Email Details"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:97
+msgid "Created"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:108
+#: src/Pro/Emails/Logs/Admin/Table.php:72
+msgid "From"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:116
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:131
+#: src/Pro/Emails/Logs/Admin/Table.php:237
+#: src/Pro/Emails/Logs/Admin/Table.php:263
+#: src/Pro/Emails/Logs/Admin/Table.php:290
+msgid "N/A"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:123
+#: src/Pro/Emails/Logs/Admin/Table.php:73
+msgid "To"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:143
+msgid "Carbon Copy (CC)"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:153
+msgid "Blind Carbon Copy (BCC)"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:158
+#: src/Pro/Emails/Logs/Admin/Table.php:71
+msgid "Subject"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:168
+msgid "Technical Details"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:174
+msgid "Hide Technical Details"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:203
+msgid "Log Details"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:210
+#: src/Pro/Emails/Logs/Admin/Table.php:113
+#: src/Pro/Providers/Providers.php:153
+msgid "Sent"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:213
+#: src/Pro/Emails/Logs/Admin/Table.php:114
+msgid "Not Sent"
+msgstr ""
+
+#. translators: %s - Sent or Not Sent.
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:222
+msgid "Status: %s"
+msgstr ""
+
+#. translators: %s - name of the mailer.
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:245
+msgid "Mailer: %s"
+msgstr ""
+
+#. translators: %s - number of attachments.
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:259
+msgid "Attachments: %s"
+msgstr ""
+
+#. translators: %s - ID of an email log.
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:269
+msgid "Log ID: %s"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:290
+msgid "Delete Log"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:333
+msgid "Something went wrong"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:335
+msgid "You are trying to access an email log entry that is no longer available or never existed."
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/SinglePage.php:338
+msgid "Please use the \"Back to Email Log\" button to return to the list of all saved emails."
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/Table.php:74
+msgid "Date Sent"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/Table.php:137
+msgid "View"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/Table.php:142
+#: src/Pro/Emails/Logs/Admin/Table.php:321
+#: src/Pro/Providers/AmazonSES/Options.php:230
+#: src/Pro/Providers/AmazonSES/Options.php:250
+msgid "Delete"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/Table.php:429
+msgid "Emails Addresses"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/Table.php:430
+msgid "Subject & Headers"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/Table.php:431
+msgid "Content"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/Table.php:460
+msgid "No emails found."
+msgstr ""
+
+#: src/Pro/Emails/Logs/Admin/Table.php:462
+msgid "No emails have been logged for now."
+msgstr ""
+
+#: src/Pro/Emails/Logs/Logs.php:133
+msgid "Number of log entries per page:"
+msgstr ""
+
+#: src/Pro/Emails/Logs/Logs.php:210
+msgid "Are you sure that you want to delete this email log? This action cannot be undone."
+msgstr ""
+
+#: src/Pro/Emails/Logs/Logs.php:410
+msgid "Email Log entry was successfully deleted."
+msgstr ""
+
+#: src/Pro/Emails/Logs/Logs.php:417
+msgid "Email Log entries were successfully deleted."
+msgstr ""
+
+#: src/Pro/Emails/Logs/Logs.php:424
+msgid "There was an error while processing your request, and no email log entries were deleted. Please try again."
+msgstr ""
+
+#. translators: %1$s - WP Mail SMTP, %2$s - error message.
+#: src/Pro/Emails/Logs/Migration.php:124
+msgid "There was an error while upgrading the database. Please contact %1$s support with this information: %2$s."
+msgstr ""
+
+#: src/Pro/License/License.php:118
+#: src/Pro/Providers/Providers.php:171
+msgid "Something went wrong. Please try again later."
+msgstr ""
+
+#: src/Pro/License/License.php:182
+msgid "Verify Key"
+msgstr ""
+
+#: src/Pro/License/License.php:192
+msgid "Deactivate Key"
+msgstr ""
+
+#. translators: $s - license type.
+#: src/Pro/License/License.php:203
+msgid "Your license key type is %s."
+msgstr ""
+
+#: src/Pro/License/License.php:217
+msgid "If your license has been upgraded or is incorrect, <a href=\"#\" id=\"wp-mail-smtp-setting-license-key-refresh\">click here to force a refresh</a>."
+msgstr ""
+
+#: src/Pro/License/License.php:293
+msgid "There was an error connecting to the remote key API. Please try again later."
+msgstr ""
+
+#: src/Pro/License/License.php:314
+msgid "Congratulations! This site is now receiving automatic updates."
+msgstr ""
+
+#: src/Pro/License/License.php:392
+#: src/Pro/License/License.php:485
+msgid "There was an error connecting to the remote server. Please try again later."
+msgstr ""
+
+#: src/Pro/License/License.php:410
+#: src/Pro/License/License.php:597
+msgid "Your license key for WP Mail SMTP Pro is invalid. The key no longer exists or the user associated with the key has been deleted. Please use a different key to continue receiving automatic updates."
+msgstr ""
+
+#: src/Pro/License/License.php:423
+msgid "Your license key for WP Mail SMTP Pro has expired. Please renew your license key on WPForms.com to continue receiving automatic updates."
+msgstr ""
+
+#: src/Pro/License/License.php:436
+#: src/Pro/License/License.php:588
+msgid "Your license key for WP Mail SMTP Pro has been disabled. Please use a different key to continue receiving automatic updates."
+msgstr ""
+
+#: src/Pro/License/License.php:451
+msgid "Your key has been refreshed successfully."
+msgstr ""
+
+#: src/Pro/License/License.php:507
+msgid "You have deactivated the key from this site successfully."
+msgstr ""
+
+#. translators: %s - plugin settings page URL.
+#: src/Pro/License/License.php:544
+#: src/Pro/License/License.php:698
+msgid "Please <a href=\"%s\">enter and activate</a> your license key for WP Mail SMTP Pro to enable automatic updates."
+msgstr ""
+
+#. translators: %s - WPMailSMTP.com login page URL.
+#. translators: %s - plugin settings page URL.
+#: src/Pro/License/License.php:567
+#: src/Pro/License/License.php:714
+msgid "Your license key for WP Mail SMTP Pro has expired. <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Please click here to renew your license key and continue receiving automatic updates.</a>"
+msgstr ""
+
+#. translators: %s - plugin settings page URL.
+#: src/Pro/License/License.php:732
+msgid "Your license key for WP Mail SMTP Pro has been disabled. Please <a href=\"%s\">enter and activate</a> a different key for WP Mail SMTP Pro to continue receiving automatic updates."
+msgstr ""
+
+#. translators: %s - plugin settings page URL.
+#: src/Pro/License/License.php:748
+msgid "Your license key for WP Mail SMTP Pro is invalid. Please <a href=\"%s\">enter and activate</a> a different key for WP Mail SMTP Pro to continue receiving automatic updates."
+msgstr ""
+
+#: src/Pro/License/License.php:763
+msgid "Your WP Mail SMTP Pro license is active and valid."
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Auth.php:46
+msgid "US East (N. Virginia)"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Auth.php:47
+msgid "US West (Oregon)"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Auth.php:48
+msgid "EU (Ireland)"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Mailer.php:315
+msgid "Just sent email is missing some required fields."
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Mailer.php:323
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:32
+msgid "Amazon SES"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:33
+msgid "Send emails using your Amazon AWS account and its SES service, all while keeping your login credentials safe."
+msgstr ""
+
+#. translators: %s - WPMailSMTP.com URL.
+#: src/Pro/Providers/AmazonSES/Options.php:37
+msgid "Read our <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Amazon SES documentation</a> to learn how to configure Amazon SES and improve your email deliverability."
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:50
+msgid "The Amazon SES mailer will be a good choice for technically advanced users who already have experience working with Amazon's web services. If you aren't sure whether this mailer sounds like the right fit for your site, then we recommend considering one of our other mailer options."
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:84
+msgid "Access Key ID"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:101
+msgid "Secret Access Key"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:125
+msgid "Closest Region"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:144
+msgid "--- Select region ---"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:151
+msgid "The closest Amazon SES region to your website was preselected."
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:153
+msgid "Please select the Amazon SES API region which is the closest to where your website is hosted."
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:155
+msgid "This can help to decrease network latency between your site and Amazon SES, which will speed up email sending."
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:158
+msgid "To access this section, please click the Save Settings button."
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:167
+msgid "Verified Emails"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:204
+msgid "Email Address"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:218
+msgid "Pending"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:220
+msgid "Resend a verification email to this address"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:224
+#: src/Pro/Providers/Providers.php:154
+msgid "Resend"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:226
+#: src/Pro/Providers/AmazonSES/Options.php:246
+msgid "Delete this email address"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:244
+msgid "Verified"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:262
+msgid "No verified email addresses."
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:263
+msgid "You will not be able to send emails until you add one (or more)."
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:272
+msgid "Email to Verify"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:273
+msgid "Add an Email Address"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:280
+msgid "Please enter a valid email address"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:282
+msgid "Send Verification Email"
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:288
+msgid "Here are the email addresses that have been verified and can be used as the From Email address."
+msgstr ""
+
+#: src/Pro/Providers/AmazonSES/Options.php:315
+msgid "To access this section, please add an Access Key ID and Secret Access Key, select the Closest Region, then click the Save Settings button."
+msgstr ""
+
+#: src/Pro/Providers/Outlook/Options.php:30
+msgid "Outlook"
+msgstr ""
+
+#. translators: %s - URL to Outlook doc.
+#: src/Pro/Providers/Outlook/Options.php:33
+msgid "Send emails using your personal or business Outlook account, all while keeping your login credentials safe.<br><br>Read our <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Outlook documentation</a> to learn how to configure Outlook and improve your email deliverability."
+msgstr ""
+
+#: src/Pro/Providers/Outlook/Options.php:46
+msgid "The Outlook mailer is a great choice if you're already using paid email services with Microsoft, as you'll have the benefit of high email sending limits without signing up for a separate service. Due to the fairly complex setup, however, this option is recommended for more technical users. If you'd prefer a more straightforward setup, then we'd recommend considering one of the other mailer options."
+msgstr ""
+
+#: src/Pro/Providers/Outlook/Options.php:79
+msgid "Application ID"
+msgstr ""
+
+#: src/Pro/Providers/Outlook/Options.php:94
+msgid "Application Password"
+msgstr ""
+
+#: src/Pro/Providers/Outlook/Options.php:116
+msgid "Redirect URI"
+msgstr ""
+
+#: src/Pro/Providers/Outlook/Options.php:124
+msgid "Copy URL to clipboard"
+msgstr ""
+
+#: src/Pro/Providers/Outlook/Options.php:129
+msgid "This is the page on your site that you will be redirected to after you have authenticated with Microsoft."
+msgstr ""
+
+#: src/Pro/Providers/Outlook/Options.php:131
+msgid "You need to copy this URL into \"Authentication > Redirect URIs\" web field for your application on Microsoft Azure site for your project there."
+msgstr ""
+
+#: src/Pro/Providers/Outlook/Options.php:140
+msgid "Authorization"
+msgstr ""
+
+#: src/Pro/Providers/Outlook/Options.php:168
+msgid "Allow plugin to send emails using your Microsoft account"
+msgstr ""
+
+#: src/Pro/Providers/Outlook/Options.php:171
+msgid "Click the button above to confirm authorization."
+msgstr ""
+
+#: src/Pro/Providers/Outlook/Options.php:177
+msgid "Remove Connection"
+msgstr ""
+
+#. translators: %s - Display name and email, as received from Microsoft API.
+#: src/Pro/Providers/Outlook/Options.php:186
+msgid "Connected as %s"
+msgstr ""
+
+#: src/Pro/Providers/Outlook/Options.php:193
+msgid "Removing the connection will give you an ability to redo the connection or link to another Microsoft account."
+msgstr ""
+
+#: src/Pro/Providers/Outlook/Options.php:201
+msgid "To access this section, please add an Application ID and Application Password, then click the Save Settings button."
+msgstr ""
+
+#: src/Pro/Providers/Providers.php:152
+msgid "Sending..."
+msgstr ""
+
+#: src/Pro/Providers/Providers.php:155
+msgid "Are you sure you want to delete this email address? You will need to add and verify it again if you want to use it in the future."
+msgstr ""
+
+#: src/Pro/Providers/Providers.php:156
+msgid "Something went wrong, please reload the page and try again."
+msgstr ""
+
+#: src/Pro/Providers/Providers.php:157
+msgid "Please make sure that the email address is valid."
+msgstr ""
+
+#: src/Pro/Providers/Providers.php:196
+#: src/Pro/Providers/Providers.php:241
+#: src/Pro/Providers/Providers.php:279
+msgid "Please provide a valid email address."
+msgstr ""
+
+#. translators: %s - email address.
+#: src/Pro/Providers/Providers.php:214
+msgid "Please check inbox of <code>%s</code> address for a verification email."
+msgstr ""
+
+#. translators: %s - email address.
+#: src/Pro/Providers/Providers.php:251
+msgid "Email address <code>%s</code> was successfully deleted."
+msgstr ""
+
+#: src/Pro/Providers/Providers.php:292
+msgid "Email address was successfully deleted."
+msgstr ""
+
+#: src/Pro/SiteHealth.php:53
+msgid "Is WP Mail SMTP Pro license active and valid?"
+msgstr ""
+
+#: src/Pro/SiteHealth.php:64
+msgid "Do WP Mail SMTP Pro DB tables exist?"
+msgstr ""
+
+#: src/Pro/SiteHealth.php:89
+msgid "DB tables"
+msgstr ""
+
+#: src/Pro/SiteHealth.php:91
+msgid "No DB tables found."
+msgstr ""
+
+#: src/Pro/SiteHealth.php:97
+msgid "Email log entries"
+msgstr ""
+
+#: src/Pro/SiteHealth.php:124
+msgid "WP Mail SMTP Pro license is active and valid"
+msgstr ""
+
+#: src/Pro/SiteHealth.php:134
+msgid "View license setting"
+msgstr ""
+
+#: src/Pro/SiteHealth.php:144
+msgid "WP Mail SMTP Pro license is invalid"
+msgstr ""
+
+#: src/Pro/SiteHealth.php:166
+msgid "Your site can communicate with wpmailsmtp.com"
+msgstr ""
+
+#: src/Pro/SiteHealth.php:174
+msgid "Communicating with the wpmailsmtp.com servers is used to check for new plugin versions, and to verify license keys."
+msgstr ""
+
+#: src/Pro/SiteHealth.php:185
+msgid "Could not reach wpmailsmtp.com"
+msgstr ""
+
+#: src/Pro/SiteHealth.php:191
+msgid "Error"
+msgstr ""
+
+#. translators: %s - The error returned by the lookup.
+#: src/Pro/SiteHealth.php:193
+msgid "Your site is unable to reach wpmailsmtp.com, and returned the error: %s"
+msgstr ""
+
+#: src/Pro/SiteHealth.php:223
+msgid "WP Mail SMTP Pro DB tables are created"
+msgstr ""
+
+#: src/Pro/SiteHealth.php:229
+msgid "WP Mail SMTP Pro has Email Log functionality, that allows storing all sent emails in the custom database table. In order to work properly, the custom tables should be created, and it seems the option is enabled and custom tables are properly created."
+msgstr ""
+
+#: src/Pro/SiteHealth.php:235
+msgid "WP Mail SMTP Pro DB tables check has failed"
+msgstr ""
+
+#. translators: %s - the list of missing tables separated by a comma.
+#: src/Pro/SiteHealth.php:241
+msgid "Missing table: %s"
+msgid_plural "Missing tables: %s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Pro/SiteHealth.php:244
+msgid "WP Mail SMTP Pro has Email Log functionality, that allows storing all sent emails in the custom database table. In order to work properly, the custom tables should be created, and it seems the option is enabled but tables are missing. Please try to re-install the WP Mail SMTP Pro plugin. If this issue persists, please contact our support."
+msgstr ""
