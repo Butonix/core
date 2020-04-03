@@ -98,6 +98,16 @@ CREATE TABLE $wpdb->options (
 	UNIQUE KEY option_name (option_name),
 	KEY autoload (autoload)
 ) $charset_collate;
+CREATE TABLE $wpdb->settings (
+	option_id bigint(20) unsigned NOT NULL auto_increment,
+	option_name varchar(191) NOT NULL default '',
+	option_value longtext NOT NULL,
+	option_group varchar(191) NOT NULL default '',
+	autoload varchar(20) NOT NULL default 'yes',
+	PRIMARY KEY  (option_id),
+	UNIQUE KEY option_name (option_name),
+	KEY autoload (autoload)
+) $charset_collate;
 CREATE TABLE $wpdb->postmeta (
 	meta_id bigint(20) unsigned NOT NULL auto_increment,
 	post_id bigint(20) unsigned NOT NULL default '0',
@@ -353,7 +363,7 @@ function populate_options( array $options = array() ) {
 	$defaults = array(
 		'siteurl'                         => $guessurl,
 		'home'                            => $guessurl,
-		'blogname'                        => __( 'My Site' ),
+		'blogname'                        => __( 'Awesome CMS' ),
 		/* translators: Site tagline. */
 		'blogdescription'                 => __( ' ' ), 
 		'users_can_register'              => 0,

@@ -268,7 +268,7 @@ class wpdb {
 		'term_taxonomy',
 		'term_relationships',
 		'termmeta',
-		'commentmeta',
+		'settings',
 	);
 
 	/**
@@ -463,6 +463,14 @@ class wpdb {
 	 * @var string
 	 */
 	public $sitemeta;
+
+	/**
+	 * WordPress Term Meta table.
+	 *
+	 * @since 4.4.0
+	 * @var string
+	 */
+	public $settings;
 
 	/**
 	 * Format specifiers for DB columns. Columns not listed here default to %s. Initialized during WP load.

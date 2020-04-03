@@ -36,7 +36,7 @@ define( 'WP_SETUP_CONFIG', true );
 error_reporting( 0 );
 
 
-require ABSPATH . 'settings.php';
+require CONFIG_DIR . 'settings.php';
 
 /** Load WordPress Administration Upgrade API */
 require_once ABSPATH . ADMIN_DIR . '/includes/upgrade.php';
