@@ -3,7 +3,7 @@
 Vagrantfile
 
 # theme dist assets
-resources/dist/*
+resources/*
 public/resources/dist/*
 # plugins
 public/resources/plugins/*
