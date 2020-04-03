@@ -12,5 +12,5 @@ public/resources/uploads/*
 # website cache directory
 public/resources/cache/*
 
-# todo
-# testing gpg key
+
+#cmon # testing gpg key
