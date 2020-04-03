@@ -12,6 +12,4 @@ public/resources/uploads/*
 # website cache directory
 public/resources/cache/*
 
-# todo
-# testing ssh key
 # testing gpg key
