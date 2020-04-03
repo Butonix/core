@@ -17,7 +17,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since Thirsty Core 0.1
  */
 require ABSPATH . '../config/_constants.php';
-
 /**
  * We are installing.
  */
@@ -68,7 +67,7 @@ if ( file_exists( CONFIG_DIR . 'configuration-sample.php' ) ) {
 }
 
 // Check if configuration.php has been created.
-if ( file_exists( ROOTPATH . 'configuration.php' ) ) {
+if ( file_exists( CONFIG_DIR . 'configuration.php' ) ) {
 	wp_die(
 		'<p>' . sprintf(
 			/* translators: 1: configuration.php, 2: install.php */
