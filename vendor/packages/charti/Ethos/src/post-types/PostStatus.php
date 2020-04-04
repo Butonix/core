@@ -116,7 +116,7 @@ class PostStatus {
 				$args['select'] = true;
 			}
 		}
-		printf( '<meta class="Core-custom-status-meta" value="%s" />', esc_attr( json_encode( $args ) ) );
+		printf( '<meta class="core-custom-status-meta" value="%s" />', esc_attr( json_encode( $args ) ) );
 	}
 
 	/**

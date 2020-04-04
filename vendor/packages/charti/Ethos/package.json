@@ -1,7 +1,7 @@
 {
-  "name": "Core-Ethos",
+  "name": "Core",
   "version": "1.0.0",
-  "description": "[View the documentation](https://github.com/CoreDesign/Core-Ethos)",
+  "description": "[View the documentation](https://github.com/CoreDesign/Core)",
   "scripts": {
     "mix-dev": "npm run mix-development",
     "mix-development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CoreDesign/Core-Ethos.git"
+    "url": "git+https://github.com/CoreDesign/Core.git"
   },
   "keywords": [],
   "author": "",
   "license": "GPLv3",
-  "homepage": "https://github.com/CoreDesign/Core-Ethos",
+  "homepage": "https://github.com/CoreDesign/Core",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",

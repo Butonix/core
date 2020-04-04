@@ -12,7 +12,7 @@ You will need to download and rename Core Ethos to reflect the name and slugs of
 - - Rename it to the desired plugin slug. (Ex. `my-plugin-name`)
 - - Rename the main plugin file to reflect the folder name.
 - - Rename namespaces from `CoreEthos`to `MyPluginNamespace`
-- - Rename comments, prefixes and other stuff, searching for `CoreEthos`, `Core-Ethos`, `Core_Ethos`, `Core`.
+- - Rename comments, prefixes and other stuff, searching for `CoreEthos`, `Core`, `Core_Ethos`, `Core`.
 - - *Important:* rename the namespace in `composer.json`. The classes autoloader will use the values in that file to search for classes to include in the autoload generation.
 - Activate the plugin
 

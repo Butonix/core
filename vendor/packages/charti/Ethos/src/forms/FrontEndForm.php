@@ -670,9 +670,9 @@ abstract class FrontEndForm {
 	 * @return array
 	 */
 	protected function uploaded_files() {
-		require_once ABSPATH . 'wp-admin/includes/image.php';
-		require_once ABSPATH . 'wp-admin/includes/file.php';
-		require_once ABSPATH . 'wp-admin/includes/media.php';
+		require_once ABSPATH . ADMIN_DIR . '/includes/image.php';
+		require_once ABSPATH . ADMIN_DIR . '/includes/file.php';
+		require_once ABSPATH . ADMIN_DIR . '/includes/media.php';
 
 		$attachments = array();
 

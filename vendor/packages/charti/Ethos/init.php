@@ -1,11 +1,4 @@
 <?php
-/**
- * Plugin Name: Core Ethos
- * Version: 0.0.1
- * Author URI: Haste Design
- * License: GPLv2
- * Text Domain: Core-Ethos
- */
 
 declare( strict_types = 1 );
 
@@ -20,7 +13,25 @@ if ( ! defined( 'Core_Ethos_PLUGIN_FILE' ) ) {
 
 // Autoload
 if ( version_compare( PHP_VERSION, '5.6.0', '>=' ) ) {
-	require __DIR__ . '/vendor/autoload.php';
+	require __DIR__ . '/src/admin/EnqueueScripts.php';
+	require __DIR__ . '/src/admin/OptionsHelper.php';
+	require __DIR__ . '/src/admin/ThemeOptions.php';
+	// Metabox
+	require __DIR__ . '/src/meta-boxes/Metabox.php';
+	//Forms
+	require __DIR__ . '/src/forms/FrontEndForm.php';
+	require __DIR__ . '/src/forms/ContactForm.php';
+
+	// Post types
+	require __DIR__ . '/src/post-types/PostType.php';
+	require __DIR__ . '/src/post-types/PostForm.php';
+	require __DIR__ . '/src/post-types/PostStatus.php';
+
+	require __DIR__ . '/src/taxonomies/Taxonomy.php';
+	require __DIR__ . '/src/taxonomies/TermMeta.php';
+	
+	require __DIR__ . '/src/templates/TemplateLoader.php';
+	require __DIR__ . '/src/users/UserMeta.php';
 }
 
 if ( ! class_exists( 'CoreEthos' ) ) {
@@ -81,7 +92,7 @@ if ( ! class_exists( 'CoreEthos' ) ) {
 		 * Load plugin translation
 		 */
 		public function load_textdomain() {
-			load_plugin_textdomain( 'Core-Ethos', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+			load_plugin_textdomain( 'Core', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 		}
 	}
 }

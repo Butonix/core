@@ -1,11 +1,12 @@
 {
-    "autoload": {
-        "files" : {
-            "DefaultRouter" : "default-router/router.php",
-            "FluentDB" : "FluentDB/db-fluent.php",
-            "ChartiMetaRow" : "charti/meta/functions.php",
-            "CoreDependencies" : "varunsridharan/CoreDepedencies/src/dependencies.php",
-            "PostEntryExtender" : "varunsridharan/PostEntryExtender/src/Post.php"
-        }
+  "autoload": {
+    "files" : {
+      "Ethos" : "charti/Ethos/init.php",
+      "DefaultRouter" : "default-router/router.php",
+      "FluentDB" : "FluentDB/db-fluent.php",
+      "ChartiMetaRow" : "charti/meta/functions.php",
+      "CoreDependencies" : "varunsridharan/CoreDepedencies/src/dependencies.php",
+      "PostEntryExtender" : "varunsridharan/PostEntryExtender/src/Post.php"
     }
+  }
 }

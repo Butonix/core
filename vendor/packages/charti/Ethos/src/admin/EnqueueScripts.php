@@ -22,6 +22,6 @@ class EnqueueScripts {
 	 * @return
 	 */
 	public function load_admin_styles() {
-		wp_enqueue_style( 'Core-Ethos-admin', CoreEthos::plugin_url() . '/assets/dist/css/admin.css' );
+		wp_enqueue_style( 'Core-admin', CoreEthos::plugin_url() . '/assets/dist/css/admin.css' );
 	}
 }

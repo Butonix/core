@@ -115,8 +115,8 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\web\side\wordpress-dev\wordpress\wp-content\plugins\Core-Ethos\assets\src\js\admin.js */"./assets/src/js/admin.js");
-module.exports = __webpack_require__(/*! C:\web\side\wordpress-dev\wordpress\wp-content\plugins\Core-Ethos\assets\src\scss\admin.scss */"./assets/src/scss/admin.scss");
+__webpack_require__(/*! C:\web\side\wordpress-dev\wordpress\wp-content\plugins\Core\assets\src\js\admin.js */"./assets/src/js/admin.js");
+module.exports = __webpack_require__(/*! C:\web\side\wordpress-dev\wordpress\wp-content\plugins\Core\assets\src\scss\admin.scss */"./assets/src/scss/admin.scss");
 
 
 /***/ })
