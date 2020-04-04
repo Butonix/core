@@ -15,18 +15,15 @@
  * @since 1.0.0
  */
 
-  // Charti CMS is Looking to rewrite the native /wp-json path
-  // This file is going to be required in settings.php bellow
-	$api_end_points_custom_file = CHARTI_CONFIGURATIONS__DIR . '/charti-rewrite-api-endpoints.php';
-
-
-	// Whoops Errors Handler. This goes on top just to be first over the apache/nginx errors
-	// require ABSPATH . ADMIN_DIR . '/mu-vendors/autoload.php';
-	// $whoops = new \Whoops\Run;
-	// $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-	// $whoops->register();
-
-
+// Charti CMS is Looking to rewrite the native /wp-json path
+// This file is going to be required in settings.php bellow
+$api_end_points_custom_file = CHARTI_CONFIGURATIONS__DIR . '/charti-rewrite-api-endpoints.php';
+	
+/**
+	Whoops Errors Handler.
+	This goes on top just to be the first who fires over the apache/nginx errors
+**/
+require_once ABSPATH . ADMIN_DIR . '/mu-vendors/autoload.php';
 
 /**
  * Version information for the current WordPress release.
@@ -416,6 +413,7 @@ require ABSPATH . WPINC . '/pluggable-deprecated.php';
  * 	Charti CMS 
  *	@since 0.1
 **/
+
 //require ABSPATH . WPINC . '/rest-api/search/function-search-admin.php';
 require ABSPATH . WPINC . '/charti/AdminDashboard.php';
 require ABSPATH . WPINC . '/charti/FrontEndRoutes.php';
@@ -442,8 +440,8 @@ do_action( 'plugins_loaded' );
 
 // Define constants which affect functionality if not already defined.
 wp_functionality_constants();
-require ABSPATH . WPINC . '/vendor/charti/_charti-login.php';
-//require ABSPATH . WPINC . '/vendor/twig/autoload.php';
+
+//require ROOTPATH . '/vendor/charti/white-label-login.php';
 
 // Add magic quotes and set up $_REQUEST ( $_GET + $_POST ).
 wp_magic_quotes();
