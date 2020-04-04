@@ -92,7 +92,7 @@ final class WP_Post {
 	 * @since 3.5.0
 	 * @var string
 	 */
-	public $comment_status = 'open';
+	public $comment_status = 'deprecated';
 
 	/**
 	 * Whether pings are allowed.
@@ -100,7 +100,7 @@ final class WP_Post {
 	 * @since 3.5.0
 	 * @var string
 	 */
-	public $ping_status = 'open';
+	public $ping_status = 'deprecated';
 
 	/**
 	 * The post's password in plain text.
@@ -124,7 +124,7 @@ final class WP_Post {
 	 * @since 3.5.0
 	 * @var string
 	 */
-	public $to_ping = '';
+	public $to_ping = 'deprecated';
 
 	/**
 	 * URLs that have been pinged.
@@ -132,7 +132,7 @@ final class WP_Post {
 	 * @since 3.5.0
 	 * @var string
 	 */
-	public $pinged = '';
+	public $pinged = 'deprecated';
 
 	/**
 	 * The post's local modified time.
