@@ -261,10 +261,12 @@ final class _WP_Editors {
 		 */
 		$the_editor = apply_filters(
 			'the_editor',
-			'<div id="wp-' . $editor_id_attr . '-editor-container" class="wp-editor-container">' .
-			$quicktags_toolbar .
-			'<textarea' . $editor_class . $height . $tabindex . $autocomplete . ' cols="40" name="' . esc_attr( $set['textarea_name'] ) . '" ' .
-			'id="' . $editor_id_attr . '">%s</textarea></div>'
+			// '<div id="wp-' . $editor_id_attr . '-editor-container" class="wp-editor-container">' .
+			// $quicktags_toolbar .
+			// '<textarea' . $editor_class . $height . $tabindex . $autocomplete . ' cols="40" name="' . esc_attr( $set['textarea_name'] ) . '" ' .
+			// 'id="' . $editor_id_attr . '">%s</textarea></div>'
+
+			'<div id="wp-' . $editor_id_attr . '-editor-container" class="wp-editor-container">%s</div>'
 		);
 
 		// Prepare the content for the Visual or Text editor, only when TinyMCE is used (back-compat).

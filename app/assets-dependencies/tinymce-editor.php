@@ -20,8 +20,9 @@ function v2admin_tinymce_scripts() {
     }
 
     $scripts = array(
-        "tinymce.min" => "tinymce/tinymce.min.js",
-        "tinymce.plugin.min" => "tinymce/plugins/lists/plugin.min.js",
+        "editor.js" => "../vendor/editor.js/dist/editor.js",
+        //"tinymce.min" => "tinymce/tinymce.min.js",
+        //"tinymce.plugin.min" => "tinymce/plugins/lists/plugin.min.js",
     );
 
     if( $get_raw['action'] == 'edit' || $get_raw == 'new' ):
@@ -31,3 +32,20 @@ function v2admin_tinymce_scripts() {
     endif;
   }
 }
+
+?>
+<!--  temporary here -->
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Header -->
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest"></script><!-- Image -->
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script><!-- Delimiter -->
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script><!-- List -->
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script><!-- Checklist -->
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script><!-- Quote -->
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script><!-- Code -->
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script><!-- Embed -->
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script><!-- Table -->
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script><!-- Link -->
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script><!-- Warning -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script><!-- Marker -->
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script><!-- Inline Code -->
