@@ -2,14 +2,14 @@
 /**
  * Simple WP Post Class With Advanced Options.
  *
- * @author    Varun Sridharan <varunsridharan23@gmail.com>
- * @copyright 2018 Varun Sridharan
- * @license   GPLV3 Or Greater
+ * @author    	Varun Sridharan <varunsridharan23@gmail.com>
+ * @license   	GPLV3 Or Greater
+ * @package 		Chartí CMS
  */
 
-namespace Varunsridharan\WordPress;
+namespace PostEntry\Core;
 
-if ( ! class_exists( '\Varunsridharan\WordPress\Post' ) ) {
+if ( ! class_exists( '\PostEntry\Core\Post' ) ) {
 	/**
 	 * Class Post
 	 *
