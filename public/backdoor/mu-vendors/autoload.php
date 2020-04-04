@@ -5,3 +5,10 @@
 require_once __DIR__ . '/composer/autoload_real.php';
 
 return ComposerAutoloaderInit9c2fdf4c71178d8a9adfc6435ef2954e::getLoader();
+
+// Init Whoops
+$whoops = new \Whoops\Run;
+
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+
+$whoops->register();
