@@ -1,0 +1,9 @@
+{
+    "autoload": {
+        "files" : {
+            "DefaultRouter" : "default-router/router.php",
+            "FluentDB" : "FluentDB/db-fluent.php",
+            "ChartiMetaRow" : "charti/meta/functions.php"
+        }
+    }
+}

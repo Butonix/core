@@ -1,0 +1,43 @@
+{
+    "name": "rareloop/router",
+    "description": "Router",
+    "keywords": [
+        "rareloop",
+        "router"
+    ],
+    "homepage": "https://github.com/rareloop/router",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joe Lambert",
+            "email": "joe@rareloop.com",
+            "homepage": "https://rareloop.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "altorouter/altorouter": "^1.1",
+        "symfony/http-foundation": "^3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0",
+        "satooshi/php-coveralls": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rareloop\\Router\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rareloop\\Router\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
