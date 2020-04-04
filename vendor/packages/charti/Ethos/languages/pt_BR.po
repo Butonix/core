@@ -1,0 +1,558 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Core Ethos v0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-10 17:51-0300\n"
+"PO-Revision-Date: 2016-10-10 17:51-0300\n"
+"Last-Translator: Rafael Funchal <rafaelfunchal@gmail.com>\n"
+"Language-Team: WordPress Brasil Group\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-EncCoreg: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+# @ Core
+#: ../inc/classes/abstracts/abstract-front-end-form.php:293
+msgid "Submit"
+msgstr "Enviar"
+
+# @ Core
+#: ../inc/classes/abstracts/abstract-front-end-form.php:336
+msgid "Form submitted successfully!"
+msgstr "Formulário enviado com sucesso!"
+
+# @ Core
+#: ../inc/classes/abstracts/abstract-front-end-form.php:609
+#: ../inc/classes/abstracts/abstract-front-end-form.php:621
+#, php-format
+msgid "%s is required."
+msgstr "%s é um campo obrigatório."
+
+# @ Core
+#: ../inc/classes/abstracts/abstract-front-end-form.php:615
+#, php-format
+msgid "%s must be an email address valid."
+msgstr "%s precisa ser um endereço de email válido"
+
+# @ Core
+#: ../inc/classes/class-contact-form.php:182
+#, php-format
+msgid "Message sent by the form %s in %s at %s"
+msgstr "Mensagem enviada pelo formulário %s em %s às %s"
+
+# @ Core
+#: ../inc/classes/class-metabox.php:98 ../inc/classes/class-metabox.php:555
+#: ../inc/classes/class-term-meta.php:83 ../inc/classes/class-term-meta.php:490
+#: ../inc/classes/class-theme-options.php:85
+#: ../inc/classes/class-theme-options.php:614
+#: ../inc/classes/class-user-meta.php:68 ../inc/classes/class-user-meta.php:405
+msgid "Add images in gallery"
+msgstr "Adicionar imagens na galeria"
+
+# @ Core
+#: ../inc/classes/class-metabox.php:99 ../inc/classes/class-term-meta.php:84
+#: ../inc/classes/class-theme-options.php:86
+#: ../inc/classes/class-user-meta.php:69
+msgid "Add in gallery"
+msgstr "Adicionar na galeria"
+
+# @ Core
+#: ../inc/classes/class-metabox.php:100 ../inc/classes/class-metabox.php:516
+#: ../inc/classes/class-metabox.php:544 ../inc/classes/class-term-meta.php:85
+#: ../inc/classes/class-term-meta.php:451
+#: ../inc/classes/class-term-meta.php:479
+#: ../inc/classes/class-theme-options.php:87
+#: ../inc/classes/class-theme-options.php:565
+#: ../inc/classes/class-theme-options.php:603
+#: ../inc/classes/class-user-meta.php:70 ../inc/classes/class-user-meta.php:366
+#: ../inc/classes/class-user-meta.php:394
+msgid "Remove image"
+msgstr "Remover imagem"
+
+# @ Core
+#: ../inc/classes/class-metabox.php:101 ../inc/classes/class-term-meta.php:86
+#: ../inc/classes/class-theme-options.php:88
+#: ../inc/classes/class-user-meta.php:71
+msgid "Choose a file"
+msgstr "Selecione um arquivo"
+
+# @ Core
+#: ../inc/classes/class-metabox.php:102 ../inc/classes/class-term-meta.php:87
+#: ../inc/classes/class-theme-options.php:89
+#: ../inc/classes/class-user-meta.php:72
+msgid "Add file"
+msgstr "Adicionar arquivo"
+
+# @ Core
+#: ../inc/classes/class-metabox.php:493 ../inc/classes/class-term-meta.php:428
+#: ../inc/classes/class-theme-options.php:531
+#: ../inc/classes/class-user-meta.php:343
+msgid "Select file"
+msgstr "Selecionar arquivo"
+
+# @ Core
+#: ../inc/classes/class-metabox.php:516 ../inc/classes/class-term-meta.php:451
+#: ../inc/classes/class-theme-options.php:565
+#: ../inc/classes/class-user-meta.php:366
+msgid "Select image"
+msgstr "Selecionar imagem"
+
+#: ../inc/classes/class-post-status.php:69
+#, php-format
+msgid "&nbsp;<span class=\"count\">(%s)</span>"
+msgid_plural "&nbsp;<span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ Core
+#: ../inc/classes/class-post-type.php:67 ../inc/classes/class-post-type.php:74
+#: ../inc/classes/class-taxonomy.php:69 ../inc/classes/class-taxonomy.php:78
+#, php-format
+msgid "%ss"
+msgstr "%ss"
+
+# @ Core
+#: ../inc/classes/class-post-type.php:68 ../inc/classes/class-taxonomy.php:70
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+# @ Core
+#: ../inc/classes/class-post-type.php:69 ../inc/classes/class-taxonomy.php:72
+#, php-format
+msgid "View %s"
+msgstr "Ver %s"
+
+# @ Core
+#: ../inc/classes/class-post-type.php:70 ../inc/classes/class-taxonomy.php:73
+#, php-format
+msgid "Edit %s"
+msgstr "Editar %s"
+
+# @ Core
+#: ../inc/classes/class-post-type.php:71 ../inc/classes/class-taxonomy.php:74
+#, php-format
+msgid "Search %s"
+msgstr "Pesquisar %s"
+
+# @ Core
+#: ../inc/classes/class-post-type.php:72 ../inc/classes/class-taxonomy.php:75
+#, php-format
+msgid "Update %s"
+msgstr "Atualizar  %s"
+
+# @ Core
+#: ../inc/classes/class-post-type.php:73 ../inc/classes/class-taxonomy.php:76
+#: ../inc/classes/class-taxonomy.php:77
+#, php-format
+msgid "Parent %s:"
+msgstr "Parente %s"
+
+# @ Core
+#: ../inc/classes/class-post-type.php:75
+msgid "Add New"
+msgstr "Adicionar Novo"
+
+# @ Core
+#: ../inc/classes/class-post-type.php:76 ../inc/classes/class-taxonomy.php:79
+#, php-format
+msgid "Add New %s"
+msgstr "Adicionar Novo %s"
+
+# @ Core
+#: ../inc/classes/class-post-type.php:77 ../inc/classes/class-taxonomy.php:80
+#, php-format
+msgid "New %s"
+msgstr "Novo %s"
+
+# @ Core
+#: ../inc/classes/class-post-type.php:78 ../inc/classes/class-taxonomy.php:81
+#, php-format
+msgid "All %ss"
+msgstr "Todos os %ss"
+
+# @ Core
+#: ../inc/classes/class-post-type.php:79
+#, php-format
+msgid "No %s found"
+msgstr "Nenhum %s encontrado"
+
+# @ Core
+#: ../inc/classes/class-post-type.php:80
+#, php-format
+msgid "No %s found in Trash"
+msgstr "Nenhum %s encontrado na Lixeira"
+
+# @ Core
+#: ../inc/classes/class-taxonomy.php:71
+#, php-format
+msgid "Add or Remove %ss"
+msgstr "Adicionar ou Remover %ss"
+
+# @ Core
+#: ../inc/classes/class-taxonomy.php:82
+#, php-format
+msgid "Separate %ss with comma"
+msgstr "Separe %ss com vírgula"
+
+# @ Core
+#: ../inc/classes/class-taxonomy.php:83
+#, php-format
+msgid "Choose from %ss most used"
+msgstr "Escolher entre os %ss mais usados"
+
+# @ Core
+#~ msgid "Not Found"
+#~ msgstr "Nada Encontrado"
+
+# @ Core
+#~ msgid ""
+#~ "It looks like nothing was found at this location. Maybe try a search?"
+#~ msgstr ""
+#~ "Parece que nada foi encontrado neste local. Talvez tentar uma pesquisa?"
+
+# @ Core
+#~ msgid "Daily Archives: %s"
+#~ msgstr "Arquivos Diários: %s"
+
+# @ Core
+#~ msgid "Monthly Archives: %s"
+#~ msgstr "Arquivos Mensais: %s"
+
+# @ Core
+#~ msgctxt "monthly archives date format"
+#~ msgid "F Y"
+#~ msgstr "F Y"
+
+# @ Core
+#~ msgid "Yearly Archives: %s"
+#~ msgstr "Arquivos Anuais: %s"
+
+# @ Core
+#~ msgctxt "yearly archives date format"
+#~ msgid "Y"
+#~ msgstr "Y"
+
+# @ Core
+#~ msgid "Archives"
+#~ msgstr "Arquivos"
+
+# @ Core
+#~ msgid "URL:"
+#~ msgstr "URL:"
+
+# @ Core
+#~ msgid "Back to %s"
+#~ msgstr "Voltar para %s"
+
+# @ Core
+#~ msgid "<span class=\"meta-nav\">&larr;</span> %s"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> %s"
+
+# @ Core
+#~ msgid "All posts by %s"
+#~ msgstr "Todas as publicações por %s"
+
+# @ Core
+#~ msgid "Category Archives: %s"
+#~ msgstr "Arquivo da Categoria: %s"
+
+# @ Core
+#~ msgid ""
+#~ "This post is password protected. Enter the password to view all comments."
+#~ msgstr ""
+#~ "Esse post é protegido por senha. Informe a senha para ver todos os "
+#~ "comentários."
+
+# @ Core
+#~ msgid "0 Comments"
+#~ msgstr "0 Comentários"
+
+# @ Core
+#~ msgid "1 Comment"
+#~ msgstr "1 Comentário"
+
+# @ Core
+#~ msgid "% Comments"
+#~ msgstr "% Comentários"
+
+# @ Core
+#~ msgid "to"
+#~ msgstr "para"
+
+# @ Core
+#~ msgid "&larr; Old Comments"
+#~ msgstr "&larr; Comentários Antigos"
+
+# @ Core
+#~ msgid "New Comments &rarr;"
+#~ msgstr "Novos Comentários &rarr;"
+
+# @ Core
+#~ msgid "Comments closed."
+#~ msgstr "Comentários não são permitidos."
+
+# @ Core
+#~ msgid "Comment"
+#~ msgstr "Comentário"
+
+# @ Core
+#~ msgid "Name"
+#~ msgstr "Nome"
+
+# @ Core
+#~ msgid "E-mail"
+#~ msgstr "E-mail"
+
+# @ Core
+#~ msgid "Website"
+#~ msgstr "Website"
+
+# @ Core
+#~ msgid "Nothing Found"
+#~ msgstr "Nada Encontrado"
+
+# @ Core
+#~ msgid ""
+#~ "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+#~ msgstr ""
+#~ "Pronto para publicar o seu primeiro post? <a href=\"%1$s\">Comece agora "
+#~ "aqui</a>."
+
+# @ Core
+#~ msgid ""
+#~ "Sorry, but nothing matched your search terms. Please try again with some "
+#~ "different keywords."
+#~ msgstr ""
+#~ "Desculpe, mas nada foi encontrado com os termos da sua pesquisa. Por "
+#~ "favor, tente novamente com algumas palavras-chave diferentes."
+
+# @ Core
+#~ msgid ""
+#~ "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+#~ "searching can help."
+#~ msgstr ""
+#~ "Parece que não conseguimos encontrar o que você está procurando. Talvez a "
+#~ "pesquisa pode ajudar."
+
+# @ Core
+#~ msgid "Pages:"
+#~ msgstr "Páginas:"
+
+# @ Core
+#~ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Continue lendo <span class=\"meta-nav\">&rarr;</span>"
+
+# @ Core
+#~ msgid "Posted in:"
+#~ msgstr "Publicado em:"
+
+# @ Core
+#~ msgctxt "Used between list items, there is a space after the comma."
+#~ msgid ", "
+#~ msgstr ", "
+
+# @ Core
+#~ msgid "Tagged as:"
+#~ msgstr "Marcado como:"
+
+# @ Core
+#~ msgid "Leave a comment"
+#~ msgstr "Deixe um comentário"
+
+# @ Core
+#~ msgid "All rights reserved"
+#~ msgstr "Todos os direitos reservados"
+
+# @ Core
+#~ msgid ""
+#~ "Powered by the <a href=\"%s\" rel=\"nofollow\" target=\"_blank\">Core</a> "
+#~ "forces and <a href=\"%s\" rel=\"nofollow\" target=\"_blank\">WordPress</"
+#~ "a>."
+#~ msgstr ""
+#~ "Powered by the <a href=\"%s\" rel=\"nofollow\" target=\"_blank\">Core</a> "
+#~ "forces and <a href=\"%s\" rel=\"nofollow\" target=\"_blank\">WordPress</"
+#~ "a>."
+
+# @ Core
+#~ msgid "Main Menu"
+#~ msgstr "Menu Principal"
+
+# @ Core
+#~ msgid "Main Sidebar"
+#~ msgstr "Sidebar Principal"
+
+# @ Core
+#~ msgid "Site Main Sidebar"
+#~ msgstr "Sidebar principal do site"
+
+# @ Core
+#~ msgid "Skip to content"
+#~ msgstr "Pular para o conteúdo"
+
+# @ Core
+#~ msgid "Toggle navigation"
+#~ msgstr "Alternar navegação"
+
+# @ Core
+#~ msgid "Search:"
+#~ msgstr "Pesquisar:"
+
+# @ Core
+#~ msgid "Search"
+#~ msgstr "Pesquisa"
+
+# @ Core
+#~ msgid "Image total size: %s pixels"
+#~ msgstr "Tamanho total da imagem: %s pixels"
+
+# @ Core
+#~ msgid "Full image link"
+#~ msgstr "Link da imagem completa"
+
+# @ Core
+#~ msgid "&larr; Previous image"
+#~ msgstr "&larr; Imagem anterior"
+
+# @ Core
+#~ msgid "Next image &rarr;"
+#~ msgstr "Próxima imagem &rarr;"
+
+# @ Core
+#~ msgid "Search Results for: %s"
+#~ msgstr "Resultado de Busca por: %s"
+
+# @ Core
+#~ msgid "Tag Archives: %s"
+#~ msgstr "Arquivo da Tag: %s"
+
+# @ Core
+#~ msgid "&laquo; Previous"
+#~ msgstr "&laquo; Anterior"
+
+# @ Core
+#~ msgid "Next &raquo;"
+#~ msgstr "Próximo &raquo;"
+
+# @ Core
+#~ msgid "Related Posts"
+#~ msgstr "Artigos Relacionados"
+
+# @ Core
+#~ msgid "Home"
+#~ msgstr "Início"
+
+# @ Core
+#~ msgid "%sCategory: %s%s"
+#~ msgstr "%sCategoria: %s%s"
+
+# @ Core
+#~ msgid "%sTag: %s%s"
+#~ msgstr "%sTag: %s%s"
+
+# @ Core
+#~ msgid "%sSearch result for: &quot;%s&quot;%s"
+#~ msgstr "%sResultado da busca para: &quot;%s&quot;%s"
+
+# @ Core
+#~ msgid "Posted by"
+#~ msgstr "Publicado por"
+
+# @ Core
+#~ msgid "404 Error"
+#~ msgstr "Erro 404"
+
+# @ Core
+#~ msgid "Page %s"
+#~ msgstr "Página %s"
+
+# @ Core
+#~ msgid "Add a menu"
+#~ msgstr "Adicionar um menu"
+
+#~ msgid "Facebook Like Box"
+#~ msgstr "Caixa de Curtir do Facebook"
+
+#~ msgid "This widget includes a facebook like box on your blog"
+#~ msgstr "Esse widget inclui a caixa de curtir do Facebook em seu site"
+
+#~ msgid "Title:"
+#~ msgstr "Título:"
+
+#~ msgid "Facebook Page URL:"
+#~ msgstr "URL da página do Facebook:"
+
+#~ msgid "Width:"
+#~ msgstr "Largura:"
+
+#~ msgid "Height:"
+#~ msgstr "Altura:"
+
+#~ msgid "Color Scheme:"
+#~ msgstr "Esquema de cores:"
+
+#~ msgid "Dark"
+#~ msgstr "Escuro"
+
+#~ msgid "Light"
+#~ msgstr "Claro"
+
+#~ msgid "Show Friends Faces"
+#~ msgstr "Exibir rostos dos amigos"
+
+#~ msgid "Show Posts"
+#~ msgstr "Exibir atualizações"
+
+#~ msgid "Show Header"
+#~ msgstr "Exibir cabeçalho"
+
+#~ msgid "Show Border"
+#~ msgstr "Exibir borda"
+
+# @ Core
+#~ msgid "Pingback:"
+#~ msgstr "Pingback:"
+
+# @ Core
+#~ msgid "Edit"
+#~ msgstr "Editar"
+
+# @ Core
+#~ msgid "in"
+#~ msgstr "em"
+
+# @ Core
+#~ msgid "at"
+#~ msgstr "as"
+
+# @ Core
+#~ msgid "said:"
+#~ msgstr "disse:"
+
+# @ Core
+#~ msgid "Your comment is awaiting moderation."
+#~ msgstr "Seu comentário está aguardando moderação."
+
+# @ Core
+#~ msgid "Respond"
+#~ msgstr "Responder"
+
+# @ Core
+#~ msgid "Sticky"
+#~ msgstr "Destacado"
+
+# @ Core
+#~ msgid "Posted in"
+#~ msgstr "Publicado em"
+
+# @ Core
+#~ msgid "by"
+#~ msgstr "por"

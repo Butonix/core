@@ -1,0 +1,16 @@
+{
+    "name": "Core/Core-Ethos",
+    "type": "project",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Allyson Souza",
+            "email": "allyson@hastedesign.com.br"
+        }
+    ],
+	"autoload": {
+	    "psr-4": {
+	        "Core\\Ethos\\": "src/"
+	    }
+	}
+}

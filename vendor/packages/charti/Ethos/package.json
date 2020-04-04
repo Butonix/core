@@ -1,0 +1,31 @@
+{
+  "name": "Core-Ethos",
+  "version": "1.0.0",
+  "description": "[View the documentation](https://github.com/CoreDesign/Core-Ethos)",
+  "scripts": {
+    "mix-dev": "npm run mix-development",
+    "mix-development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "mix-watch": "npm run mix-development -- --watch",
+    "mix-hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "mix-prod": "npm run mix-production",
+    "mix-production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoreDesign/Core-Ethos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPLv3",
+  "homepage": "https://github.com/CoreDesign/Core-Ethos",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "cross-env": "^5.2.0",
+    "laravel-mix": "^4.1.2",
+    "resolve-url-loader": "^3.1.0",
+    "sass": "^1.22.12",
+    "sass-loader": "^7.2.0",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
