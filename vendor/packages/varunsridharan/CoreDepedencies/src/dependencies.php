@@ -11,13 +11,13 @@
  * @license GPLV3 Or Greater (https://www.gnu.org/licenses/gpl-3.0.txt)
  */
 
-namespace Varunsridharan\WordPress;
+namespace Core\Check;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
-if ( ! class_exists( '\Varunsridharan\WordPress\Dependencies' ) ) {
+if ( ! class_exists( '\Core\Check\Dependencies' ) ) {
 	require_once __DIR__ . '/functions.php';
 
 	/**

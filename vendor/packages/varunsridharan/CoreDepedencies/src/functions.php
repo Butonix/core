@@ -9,7 +9,7 @@
  * @license GPLV3 Or Greater (https://www.gnu.org/licenses/gpl-3.0.txt)
  */
 
-use Varunsridharan\WordPress\Dependencies;
+use Core\Check\Dependencies;
 
 if ( ! function_exists( 'wp_is_plugin_active' ) ) {
 	/**
