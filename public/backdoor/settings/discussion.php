@@ -9,7 +9,7 @@
 require_once __DIR__ . '/../admin.php';
 
 if ( current_user_can( 'manage_options' ) ) {
-	wp_die( __( 'Disabled page/feature. <strong>Chartí CMS</strong> @since 0.1-beta' ) );
+	wp_die( __( '<h1>Deprecated Component</h1>Hey, this component is declared deprecated. Since 0.1 we lorem ipsum dolor sit amet. Check what happend <a style="display:inline; text-decoration:none" href="#">about removed components</a>' ) );
 }
 
 exit;
