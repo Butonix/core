@@ -25,61 +25,141 @@ if ( false ) {
 }
 
 /**
- * We are installing WordPress.
+ *	We are installing.
  *
- * @since 1.5.1
- * @var bool
+ *	@since 1.5.1
+ *	Moved to OOP @since 1.0	by Charti CMS
+ *	@var bool
+ *	
  */
 define( 'WP_INSTALLING', true );
 
-/** Load WordPress Bootstrap */
-require_once dirname( __DIR__ ) . '/autoloader.php';
+class Core_Setup_Installation {
 
-/** Load WordPress Administration Upgrade API */
-require_once ABSPATH . ADMIN_DIR . '/includes/upgrade.php';
+	protected $wpdb;
 
-/** Load WordPress Translation Install API */
-require_once ABSPATH . ADMIN_DIR . '/includes/translation-install.php';
+	protected $sql;
 
-/** Load wpdb */
-require_once ABSPATH . WPINC . '/wp-db.php';
+	protected $user_table; 
 
-nocache_headers();
+	public $is_public;
 
-$step = isset( $_GET['step'] ) ? (int) $_GET['step'] : 0;
+	public $loaded_language = 'en_US';
 
-/**
- * Display installation header.
- *
- * @since 2.5.0
- *
- * @param string $body_classes
- */
-function display_header( $body_classes = '' ) {
-	header( 'Content-Type: text/html; charset=utf-8' );
-	if ( is_rtl() ) {
-		$body_classes .= 'rtl';
+	public $scripts_to_print = array( 'jquery' );
+
+
+	public function __construct() {
+
+		/** Load WordPress Bootstrap */
+		require_once dirname( __DIR__ ) . '/autoloader.php';
+		// Require the Error Handler
+		require_once ABSPATH . WPINC . '/setup/class-error-handler.php';
+		
+		/** Load WordPress Administration Upgrade API */
+		require_once ABSPATH . ADMIN_DIR . '/includes/upgrade.php';
+
+		/** Require Render Template */
+		require_once ABSPATH . WPINC . '/setup/class-render-template.php';
+
+		/** Load wpdb */
+		require_once ABSPATH . WPINC . '/wp-db.php';
+
+		nocache_headers();
+
+		$step = isset( $_GET['step'] ) ? (int) $_GET['step'] : 0;
+
+    $this->wpdb();
+    
+    $this->user_admin_already_created__handler();
+    
+    $this->installation_post_form__handler();
+
+    switch ( $step ) {
+    	case 0:
+
+    		$this->scripts_to_print[] = 'user-profile';
+
+    		// Initialize the header viewer template
+    		$this->header_view();
+
+    		echo '<form id="setup" method="post" action="install.php?step=2" novalidate="novalidate">';
+    		
+    		$this->install_view();
+    		
+    		echo '</form>';
+
+    		new Render_Install_Template('footer');
+
+    	break;
+
+    	case 1:
+				if ( ! empty( $wpdb->error ) ) {
+					wp_die( $wpdb->error->get_error_message() );
+				}
+
+				$scripts_to_print[] = 'user-profile';
+    	break;
+    }
+
 	}
-	if ( $body_classes ) {
-		$body_classes = ' ' . $body_classes;
-	}
-	?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
-<head>
-	<meta name="viewport" content="width=device-width" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="robots" content="noindex,nofollow" />
-	<title><?php _e( 'WordPress &rsaquo; Installation' ); ?></title>
-	<?php wp_admin_css( 'install', true ); ?>
-</head>
-<body class="wp-core-ui<?php echo $body_classes; ?>">
-<!-- <p id="logo">
-	<a href="<?php echo esc_url( __( 'https://wordpress.org/' ) ); ?>"><?php _e( 'WordPress' ); ?></a>
-</p> -->
 
-	<?php
-} // End display_header().
+
+  /**
+   * Header Template
+   */
+  public function header_view() {
+    new Render_Install_Template('header');  
+  }
+
+  public function install_view() {  	
+  	
+  	new Render_install_Template('install');
+
+  }
+
+ 	/* Wrap global $wpdb so we can use it later */
+  protected function wpdb() {
+  	global $wpdb;
+  	
+  	$this->wpdb = $wpdb;
+  	
+  	//return $this->wpdb;
+  }
+
+  /* Check if there any admin user */
+  protected function user_admin_already_created__handler() {
+
+		$this->sql = $this->wpdb->prepare( 'SHOW TABLES LIKE %s', $this->wpdb->esc_like( $this->wpdb->users ) );
+
+		$this->user_table = ( $this->wpdb->get_var( $this->sql ) != null );
+
+		//return $this->user_table;
+  }
+
+  protected function installation_post_form__handler() {
+		// Ensure that sites appear in search engines by default.
+		$this->is_public = 1;
+		// 
+		if ( isset( $_POST['weblog_title'] ) ) {
+			$this->is_public = isset( $_POST['blog_public'] );
+		}
+
+		$this->weblog_title = isset( $_POST['weblog_title'] ) ? trim( wp_unslash( $_POST['weblog_title'] ) ) : '';
+		$this->user_name    = isset( $_POST['user_name'] ) ? trim( wp_unslash( $_POST['user_name'] ) ) : '';
+		$this->admin_email  = isset( $_POST['admin_email'] ) ? trim( wp_unslash( $_POST['admin_email'] ) ) : '';
+  }
+
+}
+
+
+new Core_Setup_Installation();
+
+
+if (1 > 2 ):
+
+
+function display_header( $body_classes = '' ) { /**/ }
 
 /**
  * Display installer setup form.
@@ -306,17 +386,17 @@ $scripts_to_print = array( 'jquery' );
 
 switch ( $step ) {
 	case 0: // Step 0.
-		if ( wp_can_install_language_pack() && empty( $language ) ) {
-			$languages = wp_get_available_translations();
-			if ( $languages ) {
-				$scripts_to_print[] = 'language-chooser';
-				display_header( 'language-chooser' );
-				echo '<form id="setup" method="post" action="?step=1">';
-				wp_install_language_form( $languages );
-				echo '</form>';
-				break;
-			}
-		}
+		// if ( wp_can_install_language_pack() && empty( $language ) ) {
+		// 	$languages = wp_get_available_translations();
+		// 	if ( $languages ) {
+		// 		$scripts_to_print[] = 'language-chooser';
+		// 		display_header( 'language-chooser' );
+		// 		echo '<form id="setup" method="post" action="?step=1">';
+		// 		wp_install_language_form( $languages );
+		// 		echo '</form>';
+		// 		break;
+		// 	}
+		// }
 
 		// Deliberately fall through if we can't reach the translations API.
 
@@ -333,11 +413,6 @@ switch ( $step ) {
 
 		display_header();
 		?>
-<h1><?php _ex( 'Welcome', 'Howdy' ); ?></h1>
-<p><?php _e( 'Welcome to the famous five-minute WordPress installation process! Just fill in the information below and you&#8217;ll be on your way to using the most extendable and powerful personal publishing platform in the world.' ); ?></p>
-
-<h2><?php _e( 'Information needed' ); ?></h2>
-<p><?php _e( 'Please provide the following information. Don&#8217;t worry, you can always change these settings later.' ); ?></p>
 
 		<?php
 		display_setup_form();
@@ -421,19 +496,8 @@ switch ( $step ) {
 		}
 		break;
 }
-
+endif;
 if ( ! wp_is_mobile() ) {
-	?>
-<script type="text/javascript">var t = document.getElementById('weblog_title'); if (t){ t.focus(); }</script>
-	<?php
-}
 
-wp_print_scripts( $scripts_to_print );
-?>
-<script type="text/javascript">
-jQuery( function( $ ) {
-	$( '.hide-if-no-js' ).removeClass( 'hide-if-no-js' );
-} );
-</script>
-</body>
-</html>
+}
+	?>
