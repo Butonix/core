@@ -1,0 +1,65 @@
+<div class="wp-die-message">
+<h1 class="screen-reader-text">
+  <?php _e( 'Setup Database Connection' ); ?>
+</h1>
+<form method="post" action="setup-config.php?step=1">
+  <p><?php _e( '<strong>Hey!</strong> Below you should enter your database connection details. If you&#8217;re not sure about these, contact your host.' ); ?></p>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <label for="dbname"><strong><?php _e( 'Database Name' ); ?></strong></label>
+        <input required name="dbname" id="dbname" type="text" aria-describedby="dbname-desc" size="25" value="charti_website" />
+      <small><?php _e( 'The name of the database you plan to use.' ); ?></small>
+    </div>
+    
+    <div class="col-lg-6">
+      <label for="dbhost"><strong><?php _e( 'Database Host' ); ?></strong></label>
+      <input name="dbhost" id="dbhost" type="text" aria-describedby="dbhost-desc" size="25" placeholder="localhost" value="localhost" />
+      <small style="float:left;">
+      <?php
+        /* translators: %s: localhost */
+        printf( __( 'You should be able to get this info from your web host, if %s doesn&#8217;t work.' ), '<code>localhost</code>' );
+      ?>
+      </small>
+    </div>
+
+    <div class="col-lg-6">
+      <label for="prefix"><strong><?php _e( 'Database Prefix' ); ?></strong></label>
+      <input name="prefix" id="prefix" type="text" aria-describedby="prefix-desc" value="wp_" />
+      <small style="float:left;">
+        <?php _e( 'Please, change this if you want to run multiple instances in a single database.' ); ?><br>
+      </small>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <label for="uname"><strong><?php _e( 'Database Username' ); ?></strong></label>
+      <div>
+        <input required name="uname" id="uname" type="text" aria-describedby="uname-desc" size="25" placeholder="<?php echo htmlspecialchars( _x( 'username', 'example username' ), ENT_QUOTES ); ?>" value="homestead" />
+      </div>
+      <small><?php _e( 'Your database username.' ); ?></small>
+    </div>
+
+    <div class="col-lg-6">
+      <label for="pwd"><strong><?php _e( 'Database Password' ); ?></strong></label>
+      <input required name="pwd" id="pwd" type="text" aria-describedby="pwd-desc" size="25" placeholder="<?php echo htmlspecialchars( _x( 'password', 'example password' ), ENT_QUOTES ); ?>" autocomplete="off" value="secret" />
+      <small><?php _e( 'Your database password.' ); ?></small>
+    </div>
+
+  </div>
+    
+
+    <?php if ( isset( $_GET['noapi'] ) ) { ?>
+      <input name="noapi" type="hidden" value="1" />
+    <?php } ?>
+
+    <!-- <input type="hidden" name="language" value="<?php echo esc_attr( $language ); ?>" /> -->
+
+    <div class="row">
+      <div class="col-lg-4">
+        <input name="submit" type="submit" value="<?php echo htmlspecialchars( __( 'Submit' ), ENT_QUOTES ); ?>" class="button button-large" />
+      </div>
+    </div>
+</form>
+</div>

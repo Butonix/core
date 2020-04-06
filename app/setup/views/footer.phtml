@@ -1,0 +1,13 @@
+    <script type="text/javascript">
+      var t = document.getElementById('weblog_title'); if (t){ t.focus(); }
+    </script>
+    <?php var_dump($this->scripts_to_print); ?>
+    <?php wp_print_scripts( $this->scripts_to_print ); ?>
+
+    <script type="text/javascript">
+    jQuery( function( $ ) {
+      $( '.hide-if-no-js' ).removeClass( 'hide-if-no-js' );
+    } );
+    </script>
+  </body>
+</html>

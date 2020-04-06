@@ -1,0 +1,88 @@
+<?php var_dump($this->loaded_language); ?>
+
+<div class="wp-die-message">
+  <h1 class="screen-reader-text">
+    <?php _e( 'Welcome' ); ?>
+  </h1>
+  <p><?php _e( 'Welcome to the famous five-minute installation process! Just fill in the information below and you&#8217;ll be on your way to using the most extendable and powerful publishing platform in the world!' ); ?></p>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <label for="weblog_title"><strong><?php _e( 'Website Name' ); ?></strong></label>
+      <input required name="weblog_title" id="weblog_title" type="text" value="<?php echo esc_attr( $this->weblog_title ); ?>" />
+    </div>
+
+    <div class="col-lg-12">
+      <label for="name_username"><strong><?php _e( 'Admin Username' ); ?></strong></label>
+      <?php
+
+      if ( $this->user_table ):
+      
+          _e( 'User(s) already exists.' );
+          echo '<input name="user_name" type="hidden" value="admin" />';
+      
+      else:
+
+        echo '<input required name="user_name" id="user_login" type="text" value="'. esc_attr(sanitize_user( $this->user_name, true )) .'" >';
+
+        echo '<small>' . __( 'Usernames can have only alphanumeric characters, spaces, underscores, hyphens, periods, and the @ symbol.' ).'</small>';
+
+      endif;
+      ?>
+    </div>
+
+    <?php if( ! $this->user_table ): ?>
+    <div class="col-lg-12 form-field form-required user-pass1-wrap">
+      <label for="pass1"><?php _e( 'Password' ); ?></label>
+        
+        <div class="wp-pwd">
+          <?php
+            $initial_password = isset( $_POST['admin_password'] ) ? stripslashes( $_POST['admin_password'] ) : wp_generate_password( 22 );
+          ?>
+
+          <input type="password" name="admin_password" id="pass1" class="regular-text" autocomplete="off" data-reveal="1" data-pw="<?php echo esc_attr( $initial_password ); ?>" aria-describedby="pass-strength-result" />
+
+          <button type="button" class="button wp-hide-pw hide-if-no-js" data-start-masked="<?php echo (int) isset( $_POST['admin_password'] ); ?>" data-toggle="0" aria-label="<?php esc_attr_e( 'Hide password' ); ?>">
+            <span class="dashicons dashicons-hidden"></span>
+            <span class="text"><?php _e( 'Hide' ); ?></span>
+          </button>
+
+          <div id="pass-strength-result" aria-live="polite"></div>
+
+        </div>
+
+        <small><span class="description important hide-if-no-js">
+        <strong><?php _e( 'Important:' ); ?></strong>
+        <?php /* translators: The non-breaking space prevents 1Password from thinking the text "log in" should trigger a password save prompt. */ ?>
+        <?php _e( 'You will need this password to log&nbsp;in. Please store it in a secure location.' ); ?></span></small>
+    </div>
+    
+    <div class="col-lg-12 form-field form-required user-pass2-wrap hide-if-js">
+      <label for="pass2"><?php _e( 'Repeat Password' ); ?>
+        <span class="description"><?php _e( '(required)' ); ?></span>
+      </label>
+      <input name="admin_password2" type="password" id="pass2" autocomplete="off" />
+    </div>
+
+    <!-- confirm password if weak -->
+    <div class="col-lg-12 pw-weak">
+      <label><?php _e( 'Confirm use of weak password' ); ?>
+        <input type="checkbox" name="pw_weak" class="pw-checkbox" />
+      </label>
+    </div>
+    <!-- /confirm password if weak -->
+
+    <?php endif; ?>
+    
+    <div class="col-lg-12">
+      <label for="admin_email"><?php _e( 'Your Email' ); ?></label>
+      <input name="admin_email" type="email" id="admin_email" value="<?php echo esc_attr( $this->admin_email ); ?>" />
+      <small><?php _e( 'Double-check your email address before continuing.' ); ?></small>
+    </div>
+
+    <div class="col-lg-12">
+      <?php submit_button( __( 'Install' ), 'button button-large', 'Submit', false, array( 'id' => 'submit' ) ); ?></p>
+      <input type="hidden" name="language" value="<?php echo isset( $_REQUEST['language'] ) ? esc_attr( $_REQUEST['language'] ) : ''; ?>" />
+    </div>
+  </div>
+</div>

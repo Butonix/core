@@ -1,0 +1,22 @@
+<?php header( 'Content-Type: text/html; charset=utf-8' ); ?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title><?php _e( 'Installation Proccess' ); ?></title>
+  <?php wp_admin_css( 'install', true ); ?>
+  
+  <style type="text/css">
+    .row {
+      margin-bottom: 10px;
+    }
+    input {width:100%; padding:3px 10px !important;}
+    label {display: block; margin-bottom: 5px;}
+    small { color:#AAA; font-size:.7rem; margin:5px 0 10px; display: block;}
+    code { background-color: lightyellow }
+  </style>
+
+</head>
+<body class="<?php echo implode( ' ', $this->body_classes ); ?>">
