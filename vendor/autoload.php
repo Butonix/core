@@ -7,4 +7,3 @@ include __DIR__.'/real_autoload.php';
 $loader = new PackageLoader\PackageLoader();
 
 $loader->load(__DIR__."/packages");
-
