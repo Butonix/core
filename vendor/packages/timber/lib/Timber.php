@@ -66,7 +66,7 @@ class Timber {
 	 * @return
 	 */
 	protected function test_compatibility() {
-		if ( is_admin() || $_SERVER['PHP_SELF'] == '/wp-login.php' ) {
+		if ( is_admin() || $_SERVER['PHP_SELF'] == '/login.php' ) {
 			return;
 		}
 		if ( version_compare(phpversion(), '5.3.0', '<') && !is_admin() ) {
