@@ -36,74 +36,198 @@ define( 'WP_INSTALLING', true );
 
 class Core_Setup_Installation {
 
+	public $install_data_helper = array();
+	/**
+	 * @global string $wp_version             The CMS version string.
+	 * @global string $required_php_version   The required PHP version string.
+	 * @global string $required_mysql_version The required MySQL version string.
+	 */
+	public $wp_version, $required_php_version, $required_mysql_version;
+	/**
+	 * @local string $php_version     The PHP Version
+	 * @local string $mysql_version   The required PHP version string.
+	 * @local string $php_compat 			Compare the PHP compatbility
+	 * @local string $mysql_compat 		Compare the MySQL version string.
+	 */
+	public $php_version, $mysql_version, $php_compat, $mysql_compat;
+	
+	// Returns $wpdb database connection
 	protected $wpdb;
-
+	
+	// Returns sql query
 	protected $sql;
-
+	
+	// Returns @array with admin user if exist
 	protected $user_table; 
-
-	public $is_public;
-
+	
+	// Default publicity option which can be changed during installation
+	public $is_public, $weblog_title, $user_name, $admin_email, $admin_password, $admin_password_check;
+	
+	// Default language
 	public $loaded_language = 'en_US';
-
+	
+	// Deafult scripts to print
 	public $scripts_to_print = array( 'jquery' );
 
 
 	public function __construct() {
-
-		/** Load WordPress Bootstrap */
-		require_once dirname( __DIR__ ) . '/autoloader.php';
-		// Require the Error Handler
-		require_once ABSPATH . WPINC . '/setup/class-error-handler.php';
 		
-		/** Load WordPress Administration Upgrade API */
-		require_once ABSPATH . ADMIN_DIR . '/includes/upgrade.php';
+		// Load required files 
+		$this->load__required_files();
+		
+		// Check if the CMS has been already installed. Prompt the message and exit the setup wizard
+		if ( is_blog_installed() ) {
+			$this->instance_already_created();
+		}
 
-		/** Require Render Template */
-		require_once ABSPATH . WPINC . '/setup/class-render-template.php';
-
-		/** Load wpdb */
-		require_once ABSPATH . WPINC . '/wp-db.php';
-
+		// Make a wpdb connection
+		$this->wpdb();
+		
+		// Get the required versions (cms version, php, mysql)
+		$this->load__required_versions();
+		
+		// force clear cache during installation
 		nocache_headers();
 
+		// the installation default step. starts with zero
 		$step = isset( $_GET['step'] ) ? (int) $_GET['step'] : 0;
-
-    $this->wpdb();
     
+    // check if user has been already created
     $this->user_admin_already_created__handler();
     
+    // POST form handler
     $this->installation_post_form__handler();
+		
+		// Initialize the header viewer template
+		$this->header_view();
 
     switch ( $step ) {
     	case 0:
-
+    		$next_step = 1;
+    		// add necessary scripts
     		$this->scripts_to_print[] = 'user-profile';
 
-    		// Initialize the header viewer template
-    		$this->header_view();
+    		$this->install_data_helper = [
+    			'user_table_exists' => $this->user_table,
+    			'loaded_language' => $this->loaded_language
+    		];
 
-    		echo '<form id="setup" method="post" action="install.php?step=2" novalidate="novalidate">';
+    		echo '<form id="setup" method="post" action="install.php?step='.$next_step.'" novalidate="novalidate">';
     		
-    		$this->install_view();
+    		$this->install_view($this->install_data_helper);
     		
     		echo '</form>';
-
-    		new Render_Install_Template('footer');
 
     	break;
 
     	case 1:
+
 				if ( ! empty( $wpdb->error ) ) {
 					wp_die( $wpdb->error->get_error_message() );
 				}
 
-				$scripts_to_print[] = 'user-profile';
+				$this->post__error_handler();
+
+				//$scripts_to_print[] = 'user-profile';
+
     	break;
     }
 
+    // Render footer
+    new Render_Install_Template('footer', $this->scripts_to_print);
+
 	}
 
+	// Let's check to make sure the CMS isn't already installed.
+	protected function instance_already_created() {
+		
+		new Render_Install_Template('header');
+
+		new Render_Install_Template('error-already-installed');
+
+		die;
+
+	}
+
+	protected function load__required_files() {
+		/** Load WordPress Bootstrap */
+		require_once dirname( __DIR__ ) . '/autoloader.php';
+		// Require the Error Handler
+		require_once ABSPATH . WPINC . '/setup/class-error-handler.php';
+		/** Load WordPress Administration Upgrade API */
+		require_once ABSPATH . ADMIN_DIR . '/includes/upgrade.php';
+		/** Require Render Template */
+		require_once ABSPATH . WPINC . '/setup/class-render-template.php';
+		/** Load wpdb */
+		require_once ABSPATH . WPINC . '/wp-db.php';
+	}
+
+	protected function load__required_versions() {
+		/**
+		 * @global string $wp_version             The WordPress version string.
+		 * @global string $required_php_version   The required PHP version string.
+		 * @global string $required_mysql_version The required MySQL version string.
+		 */
+		global $wp_version, $required_php_version, $required_mysql_version;
+
+		$this->wp_version = $wp_version;
+
+		$this->required_php_version = $required_php_version;
+
+		$this->required_mysql_version = $required_mysql_version;
+
+		$this->load__system_versions();
+	}
+
+
+	protected function load__system_versions() {
+		$this->php_version   = phpversion();
+
+		$this->mysql_version = $this->wpdb->db_version();
+
+		$this->php_compat    = version_compare( $php_version, $this->required_php_version, '>=' );
+
+		$this->mysql_compat  = version_compare( $mysql_version, $this->required_mysql_version, '>=' ) || file_exists( WP_CONTENT_DIR . '/db.php' );
+	}
+
+
+	protected function post__error_handler() {
+		// Admin Username Validator
+		if ( empty( $this->user_name ) ) {
+		
+			new ErrorHandler(__( 'Please provide a <strong>valid username.</strong>' ));
+		
+		} elseif ( sanitize_user( $this->user_name, true ) != $this->user_name ) {
+
+			new ErrorHandler(__( 'The <strong>username</strong> you provided has invalid characters.' ));
+		
+		}
+
+		// Admin Password Validator
+		if($this->admin_password != $this->admin_password_check) {
+		
+			new ErrorHandler(__( 'Your <strong>passwords do not match</strong>. Please try again.' ));
+		
+		}
+
+		// Website name Validator
+		if ( empty( $this->weblog_title ) ) {
+		
+			new ErrorHandler(__( 'A <strong>website name</strong> for your application is required.' ));
+		
+		}
+
+		// Email address Validator
+		if ( empty( $this->admin_email ) ) {
+		
+			new ErrorHandler(__( 'Provide a <strong>valid email address</strong>.' ));
+		
+		} elseif(! is_email( $admin_email )) {
+		
+			new ErroHandler(__('Sorry, that isn\'t a valid <strong>email address</strong>. Email addresses look like <code>username@example.com</code>.'));
+
+		}
+	}
 
   /**
    * Header Template
@@ -112,9 +236,9 @@ class Core_Setup_Installation {
     new Render_Install_Template('header');  
   }
 
-  public function install_view() {  	
+  public function install_view($data) {  	
   	
-  	new Render_install_Template('install');
+  	new Render_install_Template('install', $data);
 
   }
 
@@ -129,25 +253,31 @@ class Core_Setup_Installation {
 
   /* Check if there any admin user */
   protected function user_admin_already_created__handler() {
-
-		$this->sql = $this->wpdb->prepare( 'SHOW TABLES LIKE %s', $this->wpdb->esc_like( $this->wpdb->users ) );
-
+	$this->sql = $this->wpdb->prepare( 'SHOW TABLES LIKE %s', $this->wpdb->esc_like( $this->wpdb->users ) );
 		$this->user_table = ( $this->wpdb->get_var( $this->sql ) != null );
-
-		//return $this->user_table;
   }
 
   protected function installation_post_form__handler() {
+  	global $wpdb;
+
 		// Ensure that sites appear in search engines by default.
 		$this->is_public = 1;
-		// 
+		
+		// Check if the public was disabled
 		if ( isset( $_POST['weblog_title'] ) ) {
 			$this->is_public = isset( $_POST['blog_public'] );
 		}
 
+		// Website name
 		$this->weblog_title = isset( $_POST['weblog_title'] ) ? trim( wp_unslash( $_POST['weblog_title'] ) ) : '';
+		// Website user name (admin)
 		$this->user_name    = isset( $_POST['user_name'] ) ? trim( wp_unslash( $_POST['user_name'] ) ) : '';
+		// Admin credentials
 		$this->admin_email  = isset( $_POST['admin_email'] ) ? trim( wp_unslash( $_POST['admin_email'] ) ) : '';
+		$this->admin_password = isset( $_POST['admin_password'] ) ? wp_unslash( $_POST['admin_password'] ) : '';
+		$this->admin_password_check = isset( $_POST['admin_password2'] ) ? wp_unslash( $_POST['admin_password2'] ) : '';
+
+
   }
 
 }

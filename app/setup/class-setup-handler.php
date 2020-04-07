@@ -343,7 +343,7 @@ class Core_Setup_Config {
       if the configuration directory is not writable
       let's prompt the code that should be added manually
     */
-    if ( is_writable( CONFIG_DIR ) ):
+    if ( ! is_writable( CONFIG_DIR ) ):
       
       $this->manual_configuration_setup();
 
