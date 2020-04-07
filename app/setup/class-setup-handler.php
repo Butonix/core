@@ -383,7 +383,7 @@ class Core_Setup_Config {
       // set the file permissions to 0666
       chmod( $path_to_config, 0666 );
       // prompt the success message + button, go to install
-      $this->setup_successful();
+      $this->database_ready();
   }
 
   /*
@@ -401,9 +401,9 @@ class Core_Setup_Config {
       new Render_Install_Template('code', $this->config_code_output);
 
   }
-
-  function setup_successful() {
-    new Render_Install_Template('success');
+  // database is ready
+  function database_ready() {
+    new Render_Install_Template('success-db-connection');
   }
 
   /**
