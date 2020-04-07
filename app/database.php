@@ -1697,7 +1697,7 @@ class wpdb {
 			$message .= '<p>' . sprintf(
 				/* translators: %s: Support forums URL. */
 				__( 'If you&#8217;re unsure what these terms mean you should probably contact your host. If you still need help you can always visit the <a href="%s">Support Forums</a>.' ),
-				__( 'https://wordpress.org/support/forums/' )
+				__( 'https://charti.dev/forum/' )
 			) . "</p>\n";
 
 			$this->bail( $message, 'db_connect_fail' );
@@ -1854,8 +1854,8 @@ class wpdb {
 
 		$message .= '<p>' . sprintf(
 			/* translators: %s: Support forums URL. */
-			__( 'If you&#8217;re unsure what these terms mean you should probably contact your host. If you still need help you can always visit the <a href="%s">WordPress Support Forums</a>.' ),
-			__( 'https://wordpress.org/support/forums/' )
+			__( 'If you&#8217;re unsure what these terms mean you should probably contact your host. If you still need help you can always visit the <a href="%s">Support Forums</a>.' ),
+			__( 'https://charti.dev/forum/' )
 		) . "</p>\n";
 
 		// We weren't able to reconnect, so we better bail.

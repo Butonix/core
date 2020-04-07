@@ -1601,7 +1601,7 @@ You can log in to the administrator account with the following information:
 
 Username: USERNAME
 Password: PASSWORD
-Log in here: BLOG_URLwp-login.php
+Log in here: BLOG_URLlogin.php
 
 We hope you enjoy your new site. Thanks!
 

@@ -5729,7 +5729,7 @@ function wp_get_attachment_url( $attachment_id = 0 ) {
 	}
 
 	// On SSL front end, URLs should be HTTPS.
-	if ( is_ssl() && ! is_admin() && 'wp-login.php' !== $GLOBALS['pagenow'] ) {
+	if ( is_ssl() && ! is_admin() && 'login.php' !== $GLOBALS['pagenow'] ) {
 		$url = set_url_scheme( $url );
 	}
 

@@ -1212,9 +1212,13 @@ function wp_default_styles( $styles ) {
 	$styles->add( 'site-health', "/".ADMIN_DIR."/css/site-health$suffix.css" );
 
 	$styles->add( ADMIN_DIR, false, array( 'bootstrap-min-css-map', 'dashicons', 'cssgg', 'common', 'admin-menu', 'dashboard', 'list-tables', 'edit', 'revisions', 'media', 'themes', 'about', 'nav-menus', 'widgets', 'site-icon', 'l10n' ) );
+	
+	$styles->add('bootstrap-grid', "/" . ADMIN_DIR . "/css/bootstrap/bootstrap-grid.css");
 
 	$styles->add( 'login', "/".ADMIN_DIR."/css/login$suffix.css", array( 'dashicons', 'buttons', 'forms', 'l10n' ) );
-	$styles->add( 'install', "/".ADMIN_DIR."/css/install$suffix.css", array( 'dashicons', 'buttons', 'forms', 'l10n' ) );
+	
+	$styles->add( 'install', "/".ADMIN_DIR."/css/install$suffix.css", array( 'dashicons', 'buttons', 'forms', 'l10n', 'bootstrap-grid' ) );
+	
 	$styles->add( 'wp-color-picker', "/".ADMIN_DIR."/css/color-picker$suffix.css" );
 	$styles->add( 'customize-controls', "/".ADMIN_DIR."/css/customize-controls$suffix.css", array( ADMIN_DIR, 'colors', 'ie', 'imgareaselect' ) );
 	$styles->add( 'customize-widgets', "/".ADMIN_DIR."/css/customize-widgets$suffix.css", array( ADMIN_DIR, 'colors' ) );

@@ -429,7 +429,7 @@ function require_wp_db() {
 	$dbpassword = defined( 'DB_PASSWORD' ) ? DB_PASSWORD : '';
 	$dbname     = defined( 'DB_NAME' ) ? DB_NAME : '';
 	$dbhost     = defined( 'DB_HOST' ) ? DB_HOST : '';
-
+	
 	$wpdb = new wpdb( $dbuser, $dbpassword, $dbname, $dbhost );
 }
 
@@ -830,7 +830,7 @@ function wp_is_recovery_mode() {
  */
 function is_protected_endpoint() {
 	// Protect login pages.
-	if ( isset( $GLOBALS['pagenow'] ) && 'wp-login.php' === $GLOBALS['pagenow'] ) {
+	if ( isset( $GLOBALS['pagenow'] ) && 'login.php' === $GLOBALS['pagenow'] ) {
 		return true;
 	}
 

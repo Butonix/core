@@ -34,6 +34,7 @@ function v2admin_tinymce_scripts() {
 }
 
 ?>
+<?php if(2 < 1 ): ?>
 <!--  temporary here -->
   <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Header -->
   <script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest"></script><!-- Image -->
@@ -49,3 +50,4 @@ function v2admin_tinymce_scripts() {
 
   <script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script><!-- Marker -->
   <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script><!-- Inline Code -->
+<?php endif; ?>

@@ -61,14 +61,14 @@ class WP_Recovery_Mode_Link_Service {
 	}
 
 	/**
-	 * Enters recovery mode when the user hits wp-login.php with a valid recovery mode link.
+	 * Enters recovery mode when the user hits login.php with a valid recovery mode link.
 	 *
 	 * @since 5.2.0
 	 *
 	 * @param int $ttl Number of seconds the link should be valid for.
 	 */
 	public function handle_begin_link( $ttl ) {
-		if ( ! isset( $GLOBALS['pagenow'] ) || 'wp-login.php' !== $GLOBALS['pagenow'] ) {
+		if ( ! isset( $GLOBALS['pagenow'] ) || 'login.php' !== $GLOBALS['pagenow'] ) {
 			return;
 		}
 

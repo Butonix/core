@@ -391,7 +391,7 @@ function wp_logout_url( $redirect = '' ) {
     $args['redirect_to'] = urlencode( $redirect );
   }
 
-  $logout_url = add_query_arg( $args, site_url( 'wp-login.php?action=logout', 'login' ) );
+  $logout_url = add_query_arg( $args, site_url( 'login.php?action=logout', 'login' ) );
   $logout_url = wp_nonce_url( $logout_url, 'log-out' );
 
   /**
@@ -416,7 +416,7 @@ function wp_logout_url( $redirect = '' ) {
  * @return string The login URL. Not HTML-encoded.
  */
 function wp_login_url( $redirect = '', $force_reauth = false ) {
-  $login_url = site_url( 'wp-login.php', 'login' );
+  $login_url = site_url( 'login.php', 'login' );
 
   if ( ! empty( $redirect ) ) {
     $login_url = add_query_arg( 'redirect_to', urlencode( $redirect ), $login_url );
@@ -454,7 +454,7 @@ function wp_registration_url() {
    *
    * @param string $register The user registration URL.
    */
-  return apply_filters( 'register_url', site_url( 'wp-login.php?action=register', 'login' ) );
+  return apply_filters( 'register_url', site_url( 'login.php?action=register', 'login' ) );
 }
 
 /**
@@ -557,7 +557,7 @@ function wp_login_form( $args = array() ) {
   $login_form_bottom = apply_filters( 'login_form_bottom', '', $args );
 
   $form = '
-    <form name="' . $args['form_id'] . '" id="' . $args['form_id'] . '" action="' . esc_url( site_url( 'wp-login.php', 'login_post' ) ) . '" method="post">
+    <form name="' . $args['form_id'] . '" id="' . $args['form_id'] . '" action="' . esc_url( site_url( 'login.php', 'login_post' ) ) . '" method="post">
       ' . $login_form_top . '
       <p class="login-username">
         <label for="' . esc_attr( $args['id_username'] ) . '">' . esc_html( $args['label_username'] ) . '</label>
@@ -597,7 +597,7 @@ function wp_lostpassword_url( $redirect = '' ) {
     $args['redirect_to'] = urlencode( $redirect );
   }
 
-  $lostpassword_url = add_query_arg( $args, network_site_url( 'wp-login.php?action=lostpassword', 'login' ) );
+  $lostpassword_url = add_query_arg( $args, network_site_url( 'login.php?action=lostpassword', 'login' ) );
 
   /**
    * Filters the Lost Password URL.

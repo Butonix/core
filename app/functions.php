@@ -4842,8 +4842,8 @@ function wp_guess_url() {
 		$script_filename_dir = dirname( $_SERVER['SCRIPT_FILENAME'] );
 
 		// The request is for the admin.
-		if ( strpos( $_SERVER['REQUEST_URI'], ADMIN_DIR ) !== false || strpos( $_SERVER['REQUEST_URI'], 'wp-login.php' ) !== false ) {
-			$path = preg_replace( '#/(' . ADMIN_DIR .'/.*|wp-login.php)#i', '', $_SERVER['REQUEST_URI'] );
+		if ( strpos( $_SERVER['REQUEST_URI'], ADMIN_DIR ) !== false || strpos( $_SERVER['REQUEST_URI'], 'login.php' ) !== false ) {
+			$path = preg_replace( '#/(' . ADMIN_DIR .'/.*|login.php)#i', '', $_SERVER['REQUEST_URI'] );
 
 			// The request is for a file in ABSPATH.
 		} elseif ( $script_filename_dir . '/' == $abspath_fix ) {

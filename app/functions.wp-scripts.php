@@ -247,7 +247,7 @@ function wp_deregister_script( $handle ) {
 	 */
 	$current_filter = current_filter();
 	if ( ( is_admin() && 'admin_enqueue_scripts' !== $current_filter ) ||
-		( 'wp-login.php' === $GLOBALS['pagenow'] && 'login_enqueue_scripts' !== $current_filter )
+		( 'login.php' === $GLOBALS['pagenow'] && 'login_enqueue_scripts' !== $current_filter )
 	) {
 		$no = array(
 			'jquery',
