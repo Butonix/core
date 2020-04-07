@@ -8,34 +8,89 @@
 
 /** WordPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
+require ABSPATH . WPINC . '/setup/class-error-handler.php';
 
 /**
  * 	Charti CMS
  *	Rewriting post functionality with OOP in mind
  *	@since 0.1
  */
-class EditPost
+
+class Core_Edit_Post_Type
 {
+
+	public $typenow;
+
+	public $post_type;
+
+	public $post_type_object;
 	
-	function __construct()
+	function __construct($globals)
 	{
 
+		$this->typenow = $globals['typenow'];
 
+		$this->before_render__handler();
 
 	}
+
+	private function before_render__handler() {
+
+		// bail if the post type dosen't exist
+		if ( ! $this->typenow  || ! $this->post_type_object() ) {
+			
+			new ErrorHandler('Invalid Post Type');
+
+		}
+		
+		/*
+			Fire when accessed post type is not meant to be for public
+			Or when the current user dosen't have enough permissions
+		*/
+		$get_post_types = get_post_types(array('show_ui' => true));
+
+		$edit_post_type_cap = $this->post_type_object()->cap->edit_posts;
+
+		if ( ! in_array( $this->typenow, $get_post_types) || ! current_user_can( $edit_post_type_cap ) ) {
+
+			new ErrorHandler('You are not allowed to edit posts in this post type.');
+
+		}
+
+	}
+
+
+	/**
+	 * This two methods are coming together
+	 * @global string       $post_type
+	 * @global WP_Post_Type $post_type_object
+	 */
+	function post_type_object() {
+
+		$this->post_type_object = get_post_type_object( $this->post_type() );
+
+		return $this->post_type_object;
+	
+	}
+
+	function post_type() {
+
+		$this->post_type = $this->typenow;
+
+		return $this->post_type;
+	
+	}
+
 }
 
-new EditPost();
+
+$globals = [
+	'typenow' => $typenow
+];
+
+new Core_Edit_Post_Type($globals);
 
 
-
-if ( ! $typenow ) {
-	wp_die( __( 'Invalid post type.' ) );
-}
-
-if ( ! in_array( $typenow, get_post_types( array( 'show_ui' => true ) ) ) ) {
-	wp_die( __( 'Sorry, you are not allowed to edit posts in this post type.' ) );
-}
 
 if ( 'attachment' === $typenow ) {
 	if ( wp_redirect( admin_url( 'upload.php' ) ) ) {
@@ -52,29 +107,11 @@ global $post_type, $post_type_object;
 $post_type        = $typenow;
 $post_type_object = get_post_type_object( $post_type );
 
-if ( ! $post_type_object ) {
-	wp_die( __( 'Invalid post type.' ) );
-}
-
-if ( ! current_user_can( $post_type_object->cap->edit_posts ) ) {
-	wp_die(
-		'<h1>' . __( 'You need a higher level of permission.' ) . '</h1>' .
-		'<p>' . __( 'Sorry, you are not allowed to edit posts in this post type.' ) . '</p>',
-		403
-	);
-}
 
 $wp_list_table = _get_list_table( 'WP_Posts_List_Table' );
 $pagenum       = $wp_list_table->get_pagenum();
 
-// Back-compat for viewing comments of an entry.
-foreach ( array( 'p', 'attachment_id', 'page_id' ) as $_redirect ) {
-	if ( ! empty( $_REQUEST[ $_redirect ] ) ) {
-		wp_redirect( admin_url( 'edit-comments.php?p=' . absint( $_REQUEST[ $_redirect ] ) ) );
-		exit;
-	}
-}
-unset( $_redirect );
+
 
 if ( 'post' !== $post_type ) {
 	$parent_file   = "edit.php?post_type=$post_type";
