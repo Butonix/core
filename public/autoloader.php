@@ -3,14 +3,14 @@
  * Bootstrap file for setting the ABSPATH constant
  * and loading the configuration.php file. The configuration.php
  * file will then load the settings.php file, which
- * will then set up the WordPress environment.
+ * will then set up the environment.
  *
  * If the configuration.php file is not found then an error
  * will be displayed asking the visitor to set up the
  * configuration.php file.
  *
  * Will also search for configuration.php in WordPress' parent
- * directory to allow the WordPress directory to remain
+ * directory to allow the directory to remain
  * untouched.
  *
  * @package WordPress
@@ -28,13 +28,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Require for globals
  * @since Charti CMS 0.1
  */
-require ABSPATH . '../config/_constants.php';
-
+require ABSPATH . '../config/env.php';
 
 error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_USER_WARNING | E_RECOVERABLE_ERROR );
 
 /*
- * If configuration.php exists in the WordPress root, or if it exists in the root and settings.php
+ * If configuration.php exists in the root, or if it exists in the root and settings.php
  * doesn't, load configuration.php. The secondary check for settings.php has the added benefit
  * of avoiding cases where the current directory is a nested installation, e.g. / is WordPress(a)
  * and /blog/ is WordPress(b).
@@ -67,6 +66,7 @@ if ( file_exists( CONFIG_DIR . 'configuration.php' ) ) {
 	 * We're going to redirect to setup-config.php. While this shouldn't result
 	 * in an infinite loop, that's a silly thing to assume, don't you think? If
 	 * we're traveling in circles, our last-ditch effort is "Need more help?"
+	 * 																			- Aaand this is poetry!
 	 */
 	if ( false === strpos( $_SERVER['REQUEST_URI'], 'setup-config' ) ) {
 		header( 'Location: ' . $path );
@@ -96,5 +96,5 @@ if ( file_exists( CONFIG_DIR . 'configuration.php' ) ) {
 	) . '</p>';
 	$die .= '<p><a href="' . $path . '" class="button button-large">' . __( 'Create a Configuration File' ) . '</a>';
 
-	wp_die( $die, __( 'WordPress &rsaquo; Error' ) );
+	wp_die( $die, __( '&rsaquo; Error' ) );
 }
