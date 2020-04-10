@@ -235,15 +235,15 @@ class WP_Debug_Data {
 					'value'   => ABSPATH,
 					'private' => true,
 				),
-				'ROOTPATH'             => array(
-					'label' => 'ROOTPATH',
-					'value' => ( defined( 'ROOTPATH' ) ? ROOTPATH : __( 'Undefined' ) ),
-					'debug' => ( defined( 'ROOTPATH' ) ? ROOTPATH : 'undefined' ),
+				'ROOT_PATH'             => array(
+					'label' => 'ROOT_PATH',
+					'value' => ( defined( 'ROOT_PATH' ) ? ROOT_PATH : __( 'Undefined' ) ),
+					'debug' => ( defined( 'ROOT_PATH' ) ? ROOT_PATH : 'undefined' ),
 				),
-				'ROUTESPATH'             => array(
-					'label' => 'ROUTESPATH',
-					'value' => ( defined( 'ROUTESPATH' ) ? ROUTESPATH : __( 'Undefined' ) ),
-					'debug' => ( defined( 'ROUTESPATH' ) ? ROUTESPATH : 'undefined' ),
+				'ROUTES_PATH'             => array(
+					'label' => 'ROUTES_PATH',
+					'value' => ( defined( 'ROUTES_PATH' ) ? ROUTES_PATH : __( 'Undefined' ) ),
+					'debug' => ( defined( 'ROUTES_PATH' ) ? ROUTES_PATH : 'undefined' ),
 				),
 				'WPINC'             => array(
 					'label' => 'WPINC',
@@ -279,10 +279,10 @@ class WP_Debug_Data {
 					'debug' => ( defined( 'UPLOADS' ) ? UPLOADS : 'undefined' ),
 				),
 
-				'CHARTI_CONFIGURATIONS__DIR'             => array(
-					'label' => 'CHARTI_CONFIGURATIONS__DIR',
-					'value' => ( defined( 'CHARTI_CONFIGURATIONS__DIR' ) ? CHARTI_CONFIGURATIONS__DIR : __( 'Undefined' ) ),
-					'debug' => ( defined( 'CHARTI_CONFIGURATIONS__DIR' ) ? CHARTI_CONFIGURATIONS__DIR : 'undefined' ),
+				'CONFIGURATION_DIR'             => array(
+					'label' => 'CONFIGURATION_DIR',
+					'value' => ( defined( 'CONFIGURATION_DIR' ) ? CONFIGURATION_DIR : __( 'Undefined' ) ),
+					'debug' => ( defined( 'CONFIGURATION_DIR' ) ? CONFIGURATION_DIR : 'undefined' ),
 				),
 
 				'WP_HOME'             => array(
