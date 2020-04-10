@@ -1,0 +1,15 @@
+<h1><?php echo esc_html( $page_settings['title'] ); ?></h1>
+
+<?php
+  if ( has_action( 'welcome_panel' ) && current_user_can( 'edit_theme_options' ) ):
+
+    new Core\Phtml\RenderBlock('dashboard', '/blocks/welcome');
+      
+  endif;
+?>
+
+  <div id="dashboard-widgets-wrap">
+  
+    <?php wp_dashboard(); ?>
+  
+  </div>

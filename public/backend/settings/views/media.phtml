@@ -1,0 +1,153 @@
+<?php 
+// Let CoreProtector fight with all bad monkeys out there while you drink your tea
+  require_once(__DIR__  . '/../../../CoreProtector.php');
+
+  // get the content from Settings_Media_Page Class
+  //$template_content = Settings_Media_Page::template_content();
+
+ ?>
+
+<div class="wrap">
+  <h1><?php echo esc_html( $this->title ); ?></h1>
+
+  <?php settings_errors(); ?>
+
+  <form action="options.php" method="post">
+  <?php settings_fields( 'media' ); ?>
+
+    <h2 class="title">Image sizes</h2>
+    <p>The sizes listed below determine the maximum dimensions in pixels to use when adding an image to the Media Library.</p>
+
+    <div>
+      <label><strong><?php _e( 'Thumbnail size' ); ?></strong></label>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="form-group">
+            <?php _e( 'Width' ); ?>
+            <input name="thumbnail_size_w" type="number" step="1" min="0" id="thumbnail_size_w" value="<?php form_option( 'thumbnail_size_w' ); ?>" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="form-group">
+            <?php _e( 'Height' ); ?>
+            <input name="thumbnail_size_h" type="number" step="1" min="0" id="thumbnail_size_h" value="<?php form_option( 'thumbnail_size_h' ); ?>" class="form-control" />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="form-group">
+            <label for="thumbnail_crop">
+              <input name="thumbnail_crop" type="checkbox" id="thumbnail_crop" value="1" <?php checked( '1', get_option( 'thumbnail_crop' ) ); ?>/>
+              <?php _e( 'Crop thumbnail to exact dimensions (normally thumbnails are proportional)' ); ?>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <label><strong><?php _e( 'Medium size' ); ?></strong></label>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="form-group">
+            <?php _e( 'Max Width' ); ?>
+            <input name="medium_size_w" type="number" step="1" min="0" id="medium_size_w" value="<?php form_option( 'medium_size_w' ); ?>" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="form-group">
+            <?php _e( 'Max Height' ); ?>
+            <input name="medium_size_h" type="number" step="1" min="0" id="medium_size_h" value="<?php form_option( 'medium_size_h' ); ?>" class="form-control" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div>
+      <label><strong><?php _e( 'Large size' ); ?></strong></label>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="form-group">
+            <?php _e( 'Max Width' ); ?>
+            <input name="large_size_w" type="number" step="1" min="0" id="large_size_w" value="<?php form_option( 'large_size_w' ); ?>" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="form-group">
+            <?php _e( 'Max Height' ); ?>
+            <input name="large_size_h" type="number" step="1" min="0" id="large_size_h" value="<?php form_option( 'large_size_h' ); ?>" class="form-control" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  <?php do_settings_fields( 'media', 'default' ); ?>
+
+<?php
+/**
+ * @global array $wp_settings
+ */
+if ( isset( $GLOBALS['wp_settings']['media']['embeds'] ) ) :
+  ?>
+<h2 class="title"><?php _e( 'Embeds' ); ?></h2>
+<table class="form-table" role="presentation">
+  <?php do_settings_fields( 'media', 'embeds' ); ?>
+</table>
+<?php endif; ?>
+
+<?php if ( ! is_multisite() ) : ?>
+<h2 class="title"><?php _e( 'Uploading Files' ); ?></h2>
+<table class="form-table" role="presentation">
+  <?php
+  // If upload_url_path is not the default (empty), and upload_path is not the default ('wp-content/uploads' or empty).
+  if ( get_option( 'upload_url_path' ) || ( get_option( 'upload_path' ) != 'resources/uploads' && get_option( 'upload_path' ) ) ) :
+    ?>
+<tr>
+  <th scope="row"><label for="upload_path"><?php _e( 'Store uploads in this folder' ); ?></label></th>
+  <td><input name="upload_path" type="text" id="upload_path" value="<?php echo esc_attr( get_option( 'upload_path' ) ); ?>" class="regular-text code" />
+      <p class="description">
+          <?php
+          /* translators: %s: wp-content/uploads */
+          printf( __( 'Default is %s' ), '<code>wp-content/uploads</code>' );
+          ?>
+      </p>
+  </td>
+</tr>
+
+<tr>
+<th scope="row"><label for="upload_url_path"><?php _e( 'Full URL path to files' ); ?></label></th>
+<td><input name="upload_url_path" type="text" id="upload_url_path" value="<?php echo esc_attr( get_option( 'upload_url_path' ) ); ?>" class="regular-text code" />
+<p class="description"><?php _e( 'Configuring this is optional. By default, it should be blank.' ); ?></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="td-full">
+<?php else : ?>
+<tr>
+<td class="td-full">
+<?php endif; ?>
+<label for="uploads_use_yearmonth_folders">
+<input name="uploads_use_yearmonth_folders" type="checkbox" id="uploads_use_yearmonth_folders" value="1"<?php checked( '1', get_option( 'uploads_use_yearmonth_folders' ) ); ?> />
+  <?php _e( 'Organize my uploads into month- and year-based folders' ); ?>
+</label>
+</td>
+</tr>
+
+  <?php do_settings_fields( 'media', 'uploads' ); ?>
+</table>
+<?php endif; ?>
+
+<?php do_settings_sections( 'media' ); ?>
+
+<?php submit_button(); ?>
+
+</form>
+
+</div>
