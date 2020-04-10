@@ -1,10 +1,14 @@
 <?php
+
+namespace Core\ErrorHandler;
+
 /*
 
   The Core Setup Configuration
 
   @since 1.0
 */
+
 class ErrorHandler {
   
   public function __construct($message, $args = null) {
