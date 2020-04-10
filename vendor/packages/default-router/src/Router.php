@@ -28,7 +28,7 @@ class Router
         $basePath = implode('/', $siteUrlParts);
 
         // locate the custom configuration file for routes
-        $file = ROUTESPATH . 'admin/account.php';
+        $file = ROUTES_PATH . 'admin/account.php';
         $file = wp_normalize_path( $file );
 
         if (!$basePath) {
@@ -45,7 +45,7 @@ class Router
         //$router = static::$singleton = apply_filters('rareloop_router_configured', $router);
 
         // Listen for when we should check whether any defined routes match
-        add_action('wp_loaded', [static::class, 'processRequest']);
+        add_action('init', [static::class, 'processRequest']);
     }
 
     /**

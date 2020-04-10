@@ -99,9 +99,9 @@ class Router implements Routable
         $altoRoute = $this->altoRouter->match($request->getRequestUri(), $request->getMethod());
 
         // Return a 404 if we don't find anything
-        if (!is_callable($altoRoute['target'])) {
-            return new Response('', Response::HTTP_NOT_FOUND);
-        }
+        // if ( ! is_callable($altoRoute['target'])) {
+        //     return new Response('', Response::HTTP_NOT_FOUND);
+        // }
 
         // Call the target with any resolved params
         $params = new RouteParams($altoRoute['params']);
